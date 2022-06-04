@@ -1,0 +1,20 @@
+:root{
+    font-size: 16px;
+    background-color: red;
+    --prime-color: rgb(192,0,2);
+}
+
+body{
+    background-color: blanchedalmond;
+}
+
+.header{
+    background-color: var(--prime-color);
+}
+
+.profile_picture{
+    width: 10em;
+    height: 10em;
+    border-radius: 50% ;
+    border: 1px solid black;
+}

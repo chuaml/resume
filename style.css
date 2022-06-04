@@ -1,0 +1,174 @@
+:root {
+    font-size: 16px;
+    --prime-color: rgb(192, 0, 2);
+    font-family: sans-serif;
+    scroll-padding-top: 24px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    background-color: rgb(32, 32, 32);
+    margin: .1in .5in;
+}
+
+@media only screen and (orientation: portrait) {
+    body {
+        display: block;
+        margin: 0;
+    }
+}
+
+body>section {
+    padding: 2em 2em;
+}
+
+a {
+    color: white;
+    font-style: italic;
+}
+
+ul {
+    margin: .15em auto;
+}
+
+ul>li {
+    line-height: 1.5em;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+details>summary {
+    cursor: pointer;
+}
+
+.header {
+    background-color: var(--prime-color);
+    color: white;
+}
+
+.header>menu>div {
+    margin: 2em 0;
+}
+
+.header h2 {
+    text-decoration: underline;
+    font-size: large;
+    margin: 0 auto;
+}
+
+@media only screen and (orientation: portrait) {
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .header>menu {
+        flex-basis: min-content;
+        flex-grow: 2.5;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .header>menu>div {
+        margin: 1em;
+    }
+}
+
+.profile_picture {
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin: 1em auto;
+    display: block;
+}
+
+.label-container {
+    display: flex;
+    padding: .15em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.label-container>li {
+    display: block;
+    border-radius: .5em;
+    margin: .15em;
+    padding: .15em .5em;
+    background-color: white;
+    color: var(--prime-color);
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.contact-info li {
+    line-height: 2em;
+}
+
+.main {
+    display: grid;
+    padding-left: 1em;
+    padding-right: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(45ch, 1fr));
+    background-color: white;
+    color: darkslategray;
+}
+
+@media only screen and (orientation: portrait) {
+    .main {
+        display: block;
+    }
+}
+
+.main>div {
+    padding: 1em;
+}
+
+.main>div>article {
+    padding: 1em 0;
+}
+
+.main h2 {
+    margin: 0 auto;
+    border-bottom: .15em solid;
+    color: var(--prime-color);
+}
+
+.main h3 {
+    color: var(--prime-color);
+    margin: .15em auto;
+}
+
+.main details>p {
+    margin: .15em auto;
+}
+
+.date-range {
+    font-size: smaller;
+    font-style: italic;
+}
+
+.cert-apu-degree,
+.cert-apu-degree h3 {
+    color: darkblue;
+}
+
+.cert-su-degree {
+    color: var(--prime-color);
+}
+
+.cert-apu-diploma h3 {
+    color: darkslategrey;
+}
+
+.section-policy {
+    font-size: xx-small;
+    font-style: italic;
+    color: grey;
+}
