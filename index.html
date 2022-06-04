@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        if (localStorage['agree_policy'] !== 'yes'
+            && window.confirm('This document uses cookies and record data about you and your device.'
+                + ' By continuing to view this content or clicking either "Yes" or "OK", you agree the privacy policy, terms and conditions in this document.') === false) {
+            window.stop();
+        } else {
+            localStorage['agree_policy'] = 'yes';
+        }
+    </script>
+
     <title>ML</title>
     <link rel="stylesheet" href="style.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -84,12 +95,18 @@
             <article class="cert-apu-degree">
                 <h3>BSc (Hons) in Information Technology <br />with Specialism in Information System Security</h3>
                 <div class="date-range">2018 - 2020</div>
-                <div>Asia Pacific University</div>
+                <div>
+                    <a target="_blank" href="https://www.google.com/search?q=Asia+Pacific+University">Asia Pacific
+                        University</a>
+                </div>
             </article>
             <article class="cert-su-degree">
                 <h3>BSc (Hons) in Information Technology<br />UK Degree</h3>
                 <div class="date-range">2018 - 2020</div>
-                <div>Staffordshire University</div>
+                <div>
+                    <a target="_blank" href="https://www.google.com/search?q=Staffordshire+University">Staffordshire
+                        University</a>
+                </div>
             </article>
             <article class="cert-apu-diploma">
                 <h3>Diploma in Information and Communication Technologies</h3>
@@ -200,7 +217,8 @@
         <div id="privacy-policy">
             Privacy Policy:<br />
             by opening and reading this document, you agree to give up all your data and allow us to
-            collect information and data about you and your device.
+            collect information and data about you and your device, which we may share to others, person, entities or
+            organisations to process, store, and analyse for any purposes.
         </div>
     </section>
     <section class="section-policy">

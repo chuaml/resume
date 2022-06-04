@@ -1,6 +1,7 @@
 :root {
     font-size: 16px;
-    --prime-color: rgb(192, 0, 2);
+    --primary-color: hsl(359, 100%, 28%);
+    --sec-color: rgb(42, 42, 42);
     font-family: sans-serif;
     scroll-padding-top: 24px;
 }
@@ -23,7 +24,7 @@ body>section {
     padding: 2em 2em;
 }
 
-a {
+.header a {
     color: white;
     font-style: italic;
 }
@@ -45,7 +46,7 @@ details>summary {
 }
 
 .header {
-    background-color: var(--prime-color);
+    background-color: var(--primary-color);
     color: white;
 }
 
@@ -102,7 +103,7 @@ details>summary {
     margin: .15em;
     padding: .15em .5em;
     background-color: white;
-    color: var(--prime-color);
+    color: var(--primary-color);
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -117,7 +118,7 @@ details>summary {
     padding-right: 1em;
     grid-template-columns: repeat(auto-fit, minmax(45ch, 1fr));
     background-color: white;
-    color: darkslategray;
+    color: var(--sec-color);
 }
 
 @media only screen and (orientation: portrait) {
@@ -137,11 +138,11 @@ details>summary {
 .main h2 {
     margin: 0 auto;
     border-bottom: .15em solid;
-    color: var(--prime-color);
+    color: var(--primary-color);
 }
 
 .main h3 {
-    color: var(--prime-color);
+    color: var(--primary-color);
     margin: .15em auto;
 }
 
@@ -155,16 +156,18 @@ details>summary {
 }
 
 .cert-apu-degree,
-.cert-apu-degree h3 {
+.cert-apu-degree h3,
+.cert-apu-degree a {
     color: darkblue;
 }
 
-.cert-su-degree {
-    color: var(--prime-color);
+.cert-su-degree,
+.cert-su-degree a {
+    color: var(--primary-color);
 }
 
 .cert-apu-diploma h3 {
-    color: darkslategrey;
+    color: var(--sec-color);
 }
 
 .section-policy {
