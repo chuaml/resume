@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', function (ev) {
     });
 
     document.querySelectorAll('.section-policy').forEach(function (x) {
-        x.addEventListener('mouseup', function (e) {
+        x.addEventListener('pointerleave', function (e) {
             gtag('event', 'read_policy', {});
         }, { once: true });
     });
