@@ -11,9 +11,10 @@ body {
     grid-template-columns: 1fr 3fr;
     background-color: rgb(32, 32, 32);
     margin: .1in .5in;
+    max-width: 1520px;
 }
 
-@media only screen and (orientation: portrait) {
+@media only all and (orientation: portrait) {
     body {
         display: block;
         margin: 0;
@@ -60,7 +61,7 @@ details>summary {
     margin: 0 auto;
 }
 
-@media only screen and (orientation: portrait) {
+@media only all and (orientation: portrait) {
     .header {
         display: flex;
         flex-wrap: wrap;
@@ -85,9 +86,11 @@ details>summary {
     width: 15em;
     height: 15em;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 2px solid white;
     margin: 1em auto;
     display: block;
+    object-fit: cover;
+    object-position: top;
 }
 
 .label-container {
@@ -121,7 +124,7 @@ details>summary {
     color: var(--sec-color);
 }
 
-@media only screen and (orientation: portrait) {
+@media only all and (orientation: portrait) {
     .main {
         display: block;
     }
@@ -131,8 +134,20 @@ details>summary {
     padding: 1em;
 }
 
-.main>div>article {
+.main>div article {
     padding: 1em 0;
+}
+
+#section-experience section{
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
+@media only all and (orientation: portrait) {
+    #section-experience section{
+        max-height: unset;
+        overflow-y: unset;
+    }
 }
 
 .main h2 {

@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script>
-        if (localStorage['agree_policy'] !== 'yes'
-            && window.confirm('This document uses cookies and record data about you and your device.'
-                + ' By continuing to view this content or clicking either "Yes" or "OK", you agree the privacy policy, terms and conditions in this document.') === false) {
-            window.stop();
-        } else {
-            localStorage['agree_policy'] = 'yes';
+        if (location.host !== '') {
+            if (localStorage['agree_policy'] !== 'yes'
+                && window.confirm('This document uses cookies and record data about you and your device.'
+                    + ' By continuing to view this content or clicking either "Yes" or "OK", you agree the privacy policy, terms and conditions in this document.') === false) {
+                window.stop();
+            } else {
+                localStorage['agree_policy'] = 'yes';
+            }
         }
     </script>
 
@@ -23,9 +25,10 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
+        if (location.host === '') throw new Error('localhost view, gtag config is skipped.');
         gtag('js', new Date());
 
-        gtag('config', 'G-3PRB400W1H');
+        // gtag('config', 'G-3PRB400W1H');
     </script>
     <script src="script.js" defer></script>
 </head>
@@ -69,18 +72,24 @@
         <div id="section-info">
             <h2>INFO</h2>
             <p>
-            <div>name: ML Chua </div>
-            <p>Currently working as a Front-end Dev.</p>
+            <div>Name: ML Chua </div>
+            <p>Current Role: Front-end Developer which provide technical support on web application and Google's products.</p>
             </p>
             <div>
-                Strength:
-                <ul>
-                    <li>Don't write complicated spaghetti code</li>
-                </ul>
-                Weakness:
-                <ul>
-                    <li>Can't write complicated spaghetti code</li>
-                </ul>
+                <div>
+                    Weakness:
+                    <ul>
+                        <li>Can't write complicated spaghetti code</li>
+                        <li>Can't multi-tasking</li>
+                    </ul>
+                </div>
+                <div>
+                    Strength:
+                    <ul>
+                        <li>Don't write complicated spaghetti code</li>
+                        <li>Don't multi-tasking; focus on one task well</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div id="section-summary">
@@ -118,98 +127,100 @@
 
         <div id="section-experience">
             <h2>EXPERIENCE</h2>
-            <article>
-                <h3>Font-end Developer</h3>
-                <div class="date-range">Feb 2022 – Present</div>
-                <div>with TDCX</div>
-                <details>
-                    <summary>
-                        Responsibilities:
-                    </summary>
-                    <p>
-                    <ul>
-                        <li>Provide tech support for Google's services</li>
-                        <li>Provide customer support and consultation for customers' queries</li>
-                        <li>Install Google's services into customers' website</li>
-                        <li>Assist customers to advertise Ads on Google</li>
-                    </ul>
-                    </p>
-                </details>
-            </article>
-            <article>
-                <h3>Full-stack Developer | .NET Consultant</h3>
-                <div class="date-range">Nov 2020 – Jan 2022</div>
-                <div>with Nexplatform & FusionQB Sdn. Bhd</div>
-                <details>
-                    <summary>
-                        Responsibilities:
-                    </summary>
-                    <p>
-                    <ul>
-                        <li>Gather & discuss requirements from clients</li>
-                        <li>Design & develop software features</li>
-                        <li>Estimate & plan project timeline</li>
-                        <li>Maintain existing software & databases</li>
-                        <li>Enhance existing software</li>
-                        <li>Keep track of & resolve issues log</li>
-                        <li>Provide customer supports</li>
-                        <li>QA & test software, maintain code quality</li>
-                    </ul>
-                    </p>
-                </details>
-            </article>
-            <article>
-                <h3>Full-stack Php Developer</h3>
-                <div class="date-range">Jan 2019 – Dec 2019</div>
-                <div>with Infinity Cardeco Entertainment Sdn. Bhd</div>
-                <details>
-                    <summary>
-                        Job scope
-                    </summary>
-                    <p>
-                    <ul>
-                        <li>Gather requirements</li>
-                        <li>Design & develop software system</li>
-                        <li>Provide maintenance and tech supports</li>
-                    </ul>
-                    </p>
-                </details>
-            </article>
-            <article>
-                <h3>Software Support Engineer</h3>
-                <div class="date-range">July 2019 – Nov 2019</div>
-                <div>with Qinetics Solutions Sdn. Bhd</div>
-                <details>
-                    <summary>
-                        Responsibilities
-                    </summary>
-                    <p>
-                    <ul>
-                        <li>Resolve level 2 tickets</li>
-                        <li>Develop in-house software tool</li>
-                    </ul>
-                    </p>
-                </details>
-            </article>
-            <article>
-                <h3>Assistant</h3>
-                <div class="date-range">April 2018 – August 2018</div>
-                <div>with Infinity Cardeco Entertainment Sdn. Bhd</div>
-                <details>
-                    <summary>
-                        Responsibilities
-                    </summary>
-                    <p>
-                    <ul>
-                        <li>Resolve day-to-day task and online orders</li>
-                        <li>Stock management</li>
-                        <li>Assist in logistic</li>
-                        <li>Additionally develop an in-house software</li>
-                        <li>Additionally prodive IT consultation</li>
-                    </ul>
-                    </p>
-                </details>
-            </article>
+            <section>
+                <article>
+                    <h3>Font-end Developer</h3>
+                    <div class="date-range">Feb 2022 – Present</div>
+                    <div>with TDCX</div>
+                    <details>
+                        <summary>
+                            Responsibilities:
+                        </summary>
+                        <p>
+                        <ul>
+                            <li>Provide tech support for Google's services</li>
+                            <li>Provide customer support and consultation for customers' queries</li>
+                            <li>Install Google's services into customers' website</li>
+                            <li>Assist customers to advertise Ads on Google</li>
+                        </ul>
+                        </p>
+                    </details>
+                </article>
+                <article>
+                    <h3>Full-stack Developer | .NET Consultant</h3>
+                    <div class="date-range">Nov 2020 – Jan 2022</div>
+                    <div>with Nexplatform & FusionQB Sdn. Bhd</div>
+                    <details>
+                        <summary>
+                            Responsibilities:
+                        </summary>
+                        <p>
+                        <ul>
+                            <li>Gather & discuss requirements from clients</li>
+                            <li>Design & develop software features</li>
+                            <li>Estimate & plan project timeline</li>
+                            <li>Maintain existing software & databases</li>
+                            <li>Enhance existing software</li>
+                            <li>Keep track of & resolve issues log</li>
+                            <li>Provide customer supports</li>
+                            <li>QA & test software, maintain code quality</li>
+                        </ul>
+                        </p>
+                    </details>
+                </article>
+                <article>
+                    <h3>Full-stack Php Developer</h3>
+                    <div class="date-range">Jan 2019 – Dec 2019</div>
+                    <div>with Infinity Cardeco Entertainment Sdn. Bhd</div>
+                    <details>
+                        <summary>
+                            Job scope
+                        </summary>
+                        <p>
+                        <ul>
+                            <li>Gather requirements</li>
+                            <li>Design & develop software system</li>
+                            <li>Provide maintenance and tech supports</li>
+                        </ul>
+                        </p>
+                    </details>
+                </article>
+                <article>
+                    <h3>Software Support Engineer</h3>
+                    <div class="date-range">July 2019 – Nov 2019</div>
+                    <div>with Qinetics Solutions Sdn. Bhd</div>
+                    <details>
+                        <summary>
+                            Responsibilities
+                        </summary>
+                        <p>
+                        <ul>
+                            <li>Resolve level 2 tickets</li>
+                            <li>Develop in-house software tool</li>
+                        </ul>
+                        </p>
+                    </details>
+                </article>
+                <article>
+                    <h3>Assistant</h3>
+                    <div class="date-range">April 2018 – August 2018</div>
+                    <div>with Infinity Cardeco Entertainment Sdn. Bhd</div>
+                    <details>
+                        <summary>
+                            Responsibilities
+                        </summary>
+                        <p>
+                        <ul>
+                            <li>Resolve day-to-day task and online orders</li>
+                            <li>Stock management</li>
+                            <li>Assist in logistic</li>
+                            <li>Additionally develop an in-house software</li>
+                            <li>Additionally prodive IT consultation</li>
+                        </ul>
+                        </p>
+                    </details>
+                </article>
+            </section>
         </div>
     </section>
 

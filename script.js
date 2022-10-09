@@ -52,3 +52,32 @@ window.addEventListener('DOMContentLoaded', function (ev) {
 
 });
 
+
+if (location.host !== '') {
+    document.addEventListener('keydown', function (e) {
+        const key = e.key.toUpperCase();
+        if (key === 'F12') {
+            e.preventDefault(); return false;
+        }
+
+        if (e.ctrlKey && key === 'U') {
+            e.preventDefault(); return false;
+        }
+
+        if (e.ctrlKey && e.shiftKey) {
+            if (key === 'I') {
+                e.preventDefault(); return false;
+            }
+            if (key === 'C') {
+                e.preventDefault(); return false;
+            }
+            if (key === 'J') {
+                e.preventDefault(); return false;
+            }
+        }
+    });
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        return false;
+    });
+}
