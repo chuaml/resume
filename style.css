@@ -111,6 +111,14 @@ details>summary {
     font-weight: bold;
 }
 
+.label-container>li *{
+    color: var(--primary-color);
+}
+
+.label-container>li>a{
+    text-decoration: none;
+}
+
 .contact-info li {
     line-height: 2em;
 }
@@ -163,6 +171,10 @@ details>summary {
 
 .main details>p {
     margin: .15em auto;
+}
+
+summary{
+    text-decoration: underline;
 }
 
 .date-range {
