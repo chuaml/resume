@@ -62,11 +62,11 @@ if (location.host !== '') {
                 + new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30)).toISOString()
                 + ';max-age=' + 60 * 60 * 24 * 365 / 2 // stay p time valid for blocking expired view
                 ;
-
         } else {
             const expireDate = viewExpireTime.substring(viewExpireTime.indexOf('=') + 1);
             if (new Date() >= new Date(expireDate)) {
                 window.stop();
+                window.document.body.remove();
                 alert('your view session is expired.');
                 throw new Error('your view session has expired.');
             }
