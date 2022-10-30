@@ -52,8 +52,27 @@ window.addEventListener('DOMContentLoaded', function (ev) {
 
 });
 
-
 if (location.host !== '') {
+    (function () {
+        const cookieName = 'viewExpireTime';
+        const viewExpireTime = document.cookie.split('; ').find(x => x.startsWith(cookieName));
+        if (viewExpireTime === undefined) {
+            // set view expire after n day
+            document.cookie = cookieName + '='
+                + new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30)).toISOString()
+                + ';max-age=' + 60 * 60 * 24 * 365 / 2 // stay p time valid for blocking expired view
+                ;
+
+        } else {
+            const expireDate = viewExpireTime.substring(viewExpireTime.indexOf('=') + 1);
+            if (new Date() >= new Date(expireDate)) {
+                window.stop();
+                alert('your view session is expired.');
+                throw new Error('your view session has expired.');
+            }
+        }
+    })();
+
     document.addEventListener('keydown', function (e) {
         const key = e.key.toUpperCase();
         if (key === 'F12') {
