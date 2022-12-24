@@ -104,7 +104,6 @@ details>summary {
     display: block;
     border-radius: .5em;
     margin: .15em;
-    padding: .15em .5em;
     background-color: white;
     color: var(--primary-color);
     font-family: sans-serif;
@@ -117,6 +116,9 @@ details>summary {
 
 .label-container>li>a{
     text-decoration: none;
+    display: inline-block;
+    padding: 0 .35em;
+    margin: .15em;
 }
 
 .contact-info li {
@@ -175,6 +177,8 @@ details>summary {
 
 summary{
     text-decoration: underline;
+    width: max-content;
+    padding-right: 1em;
 }
 
 .date-range {
