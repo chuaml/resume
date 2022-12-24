@@ -52,6 +52,12 @@ window.addEventListener('DOMContentLoaded', function (ev) {
 
 });
 
+document.addEventListener('keyup', function (e) {
+    if(e.key === 'PrintScreen'){
+        alert('dude, you can just share the link, no need screenshot.');
+    }
+});
+
 if (location.host !== '') {
     document.addEventListener('keydown', function (e) {
         const key = e.key.toUpperCase();
@@ -79,7 +85,7 @@ if (location.host !== '') {
         e.preventDefault();
         return false;
     });
-    
+
     (function () {
         const cookieName = 'viewExpireTime';
         const viewExpireTime = document.cookie.split('; ').find(x => x.startsWith(cookieName));
