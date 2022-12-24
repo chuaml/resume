@@ -6,22 +6,28 @@
     scroll-padding-top: 24px;
 }
 
-body {
+body{
+    margin:0;
+    background-color: rgb(32, 32, 32);
+}
+
+#body-content {
     display: grid;
     grid-template-columns: 1fr 3fr;
     background-color: rgb(32, 32, 32);
-    margin: .1in .5in;
+    padding: .1in .5in;
+    cursor: default;
     max-width: 1520px;
 }
 
 @media only all and (orientation: portrait) {
-    body {
+    #body-content {
         display: block;
-        margin: 0;
+        padding: 0;
     }
 }
 
-body>section {
+#body-content >section {
     padding: 2em 2em;
 }
 
