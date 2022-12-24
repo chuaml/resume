@@ -42,8 +42,23 @@ p {
     line-height: 1.5em;
 }
 
-details>summary {
+details>summary{
     cursor: pointer;
+    text-decoration: underline;
+    width: max-content;
+    padding-left: .5em;
+    padding-right: 1em;
+    margin: .25em 0;
+}
+
+details>summary {
+    border: 1px solid grey;
+    border-radius: .25em;
+    box-shadow: 1px 1px 1px 0px;
+}
+details[open]>summary {
+    border-left: 2px solid grey;
+    box-shadow: inset -1px 1px 1px 0px;
 }
 
 .header {
@@ -173,12 +188,6 @@ details>summary {
 
 .main details>p {
     margin: .15em auto;
-}
-
-summary{
-    text-decoration: underline;
-    width: max-content;
-    padding-right: 1em;
 }
 
 .date-range {
