@@ -107,11 +107,19 @@ details[open]>summary {
     width: 15em;
     height: 15em;
     border-radius: 50%;
-    border: 2px solid white;
+    border: 2px solid lightgrey;
     margin: 1em auto;
     display: block;
     object-fit: cover;
     object-position: top;
+    transition-delay: .2s;
+    transition-duration: 1s;
+}
+.profile_picture:hover{
+    transition-delay: .1s;
+    transition-duration: 1s;
+    border: 2px solid white;
+    box-shadow: 0 0 16px 0px white;
 }
 
 .label-container {
@@ -128,9 +136,12 @@ details[open]>summary {
     background-color: white;
     font-family: sans-serif;
     font-weight: bold;
-    box-shadow: 0px 0px 4px 1px lightgrey;
+    transition-duration: .5s;
 }
-
+.label-container>li:hover {
+    box-shadow: 0px 0px 4px 1px lightgrey;
+    transition-duration: .15s;
+}
 .label-container>li *{
     color: var(--primary-color);
 }
