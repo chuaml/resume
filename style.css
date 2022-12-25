@@ -14,7 +14,7 @@ body{
 #body-content {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    background-color: rgb(32, 32, 32);
+    /* background-color: rgb(32, 32, 32); */
     padding: .1in .5in;
     cursor: default;
     max-width: 1520px;
@@ -220,4 +220,22 @@ details[open]>summary {
     font-size: xx-small;
     font-style: italic;
     color: grey;
+}
+
+
+@media only print {
+    body{
+        background-color: unset;
+        margin: 0;
+    }
+    #body-content {
+        padding: 0;
+    }
+    .section-policy{
+        display:none;
+    }
+    #section-experience  section{
+        max-height: max-content;
+        overflow-y: hidden;
+    }
 }
