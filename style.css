@@ -6,8 +6,10 @@
     scroll-padding-top: 24px;
 }
 
-body{
-    margin:0;
+
+
+body {
+    margin: 0;
     background-color: rgb(32, 32, 32);
 }
 
@@ -27,7 +29,7 @@ body{
     }
 }
 
-#body-content >section {
+#body-content>section {
     padding: 2em 2em;
 }
 
@@ -48,7 +50,7 @@ p {
     line-height: 1.5em;
 }
 
-details>summary{
+details>summary {
     cursor: pointer;
     text-decoration: underline;
     width: max-content;
@@ -62,6 +64,7 @@ details>summary {
     border-radius: .25em;
     box-shadow: 1px 1px 1px 0px;
 }
+
 details[open]>summary {
     border-left: 2px solid grey;
     box-shadow: inset -1px 1px 1px 0px;
@@ -116,7 +119,8 @@ details[open]>summary {
     transition-delay: .2s;
     transition-duration: 1s;
 }
-.profile_picture:hover{
+
+.profile_picture:hover {
     transition-delay: .1s;
     transition-duration: 1s;
     border: 2px solid white;
@@ -139,15 +143,17 @@ details[open]>summary {
     font-weight: bold;
     transition-duration: .5s;
 }
+
 .label-container>li:hover {
     box-shadow: 0px 0px 4px 1px lightgrey;
     transition-duration: .15s;
 }
-.label-container>li *{
+
+.label-container>li * {
     color: var(--primary-color);
 }
 
-.label-container>li>a{
+.label-container>li>a {
     text-decoration: none;
     display: inline-block;
     padding: 0 .35em;
@@ -182,13 +188,13 @@ details[open]>summary {
     padding: 1em 0;
 }
 
-#section-experience section{
+#section-experience section {
     max-height: 350px;
     overflow-y: scroll;
 }
 
 @media only all and (orientation: portrait) {
-    #section-experience section{
+    #section-experience section {
         max-height: unset;
         overflow-y: unset;
     }
@@ -237,18 +243,39 @@ details[open]>summary {
 
 
 @media only print {
-    body{
+    body {
         background-color: unset;
         margin: 0;
     }
+
     #body-content {
         padding: 0;
     }
-    .section-policy{
-        display:none;
+
+    .section-policy {
+        display: none;
     }
-    #section-experience  section{
+
+    #section-experience section {
         max-height: max-content;
         overflow-y: hidden;
     }
+}
+
+/* custom scrollbar */
+/* for Chrome or similar only */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
 }
