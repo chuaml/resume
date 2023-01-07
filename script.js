@@ -1,4 +1,4 @@
-const trackPageViewAfterSec = function (pageOpened_Sec) {
+var trackPageViewAfterSec = function (pageOpened_Sec) {
     setTimeout(function () {
         gtag('event', 'page_view_sec', { value: pageOpened_Sec, Seconds: pageOpened_Sec });
     }, pageOpened_Sec * 1000);
@@ -6,6 +6,7 @@ const trackPageViewAfterSec = function (pageOpened_Sec) {
 trackPageViewAfterSec(15);
 trackPageViewAfterSec(30);
 trackPageViewAfterSec(60);
+trackPageViewAfterSec(120);
 
 document.querySelectorAll('a[href^=mailto]').forEach(function (x) {
     const handler = function (e) {
