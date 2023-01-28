@@ -20,6 +20,7 @@ body {
     padding: .1in .5in;
     cursor: default;
     max-width: 1520px;
+    margin: auto;
 }
 
 @media only all and (orientation: portrait) {
