@@ -1,6 +1,8 @@
 var trackPageViewAfterSec = function (pageOpened_Sec) {
     setTimeout(function () {
-        gtag('event', 'page_view_sec', { value: pageOpened_Sec, Seconds: pageOpened_Sec });
+        requestAnimationFrame(_ => { // record only if page is being view
+            gtag('event', 'page_view_sec', { value: pageOpened_Sec, text: pageOpened_Sec });
+        });
     }, pageOpened_Sec * 1000);
 }
 trackPageViewAfterSec(15);
@@ -91,7 +93,7 @@ if (location.host !== '') {
             // set view expire after n day
             document.cookie = cookieName + '='
                 + new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30)).toISOString()
-                + ';max-age=' + 60 * 60 * 24 * 365 / 2 // stay p time valid for blocking expired view
+                + ';max-age=' + 60 * 60 * 24 * 365 / 4 // stay p time valid for blocking expired view
                 ;
         } else {
             const expireDate = viewExpireTime.substring(viewExpireTime.indexOf('=') + 1);
