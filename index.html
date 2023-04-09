@@ -25,7 +25,10 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
-        if (location.host === '') throw new Error('localhost view, gtag config is skipped.');
+        if (location.host === '') {
+            window.gtag = function() { console.log(arguments); };
+            throw new Error('localhost view, gtag config is skipped.');
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-3PRB400W1H');
@@ -76,7 +79,7 @@
         <div id="section-info">
             <h2 title="just some simple info">INFO</h2>
             <p>
-            <div>Name: ML Chua </div>
+            <div>Name: ML C.</div>
             <p>Current Role: Front-end Developer</p>
             </p>
             <div>
@@ -233,7 +236,7 @@
     <section class="section-policy">
         <div id="privacy-policy">
             Privacy Policy:<br />
-            by opening or accessing this document, you agree to give up all your data and allow others to
+            by opening or accessing this document, you agree to allow others to
             collect information and data about you and your device, which your data may share to other person, entities or
             organisations to process, store, and analyse for any purposes.
         </div>
@@ -245,9 +248,6 @@
             mentioned in this document, and also accept cookies that collect your data for analytics purpose.
             And you also agree to not to abuse any information in this document; That is, you agree to not spam or use
             info above for any unethical purposes.
-            For example, you should not spam the email or phone number, or use it for robot calls, or try hacking,
-            or use it to social engineer your way about anyone or any organisations mentioned or shown in this document.
-            Unless, you want to get into trouble and face consequences of your malicious action.
         </div>
     </section>
 </div>

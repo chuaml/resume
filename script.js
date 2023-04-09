@@ -12,9 +12,7 @@ trackPageViewAfterSec(120);
 
 document.querySelectorAll('a[href^=mailto]').forEach(function (x) {
     const handler = function (e) {
-        let email = e.currentTarget.innerText.trim();
-
-        gtag('event', 'click_copy_email', { Email: email });
+        gtag('event', 'click_copy_email', { event_type: e.type });
     };
     x.addEventListener('click', handler, { once: true });
     x.addEventListener('copy', handler, { once: true });
@@ -22,9 +20,7 @@ document.querySelectorAll('a[href^=mailto]').forEach(function (x) {
 
 document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (x) {
     const handler = function (e) {
-        let phone = e.currentTarget.innerText.trim();
-
-        gtag('event', 'click_copy_phone', { Text: phone });
+        gtag('event', 'click_copy_phone', { event_type: e.type });
     };
     x.addEventListener('click', handler, { once: true });
     x.addEventListener('copy', handler, { once: true });
@@ -32,7 +28,7 @@ document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (x) {
 
 document.querySelectorAll('a[href^="https://www.linkedin.com/in/"]').forEach(function (x) {
     x.addEventListener('click', function (e) {
-        gtag('event', 'click_LinkedIn', {});
+        gtag('event', 'click_LinkedIn');
     }, { once: true });
 });
 
@@ -40,21 +36,21 @@ document.querySelectorAll('a[href^="https://www.linkedin.com/in/"]').forEach(fun
 
 document.querySelectorAll('details').forEach(function (x) {
     x.addEventListener('click', function (e) {
-        let jobTitle = e.currentTarget.closest('article').querySelector('h3').innerText;
-        gtag('event', 'click_job_details', { Job: jobTitle });
+        const jobTitle = e.currentTarget.closest('article').querySelector('h3').innerText.trim();
+        gtag('event', 'click_job_details', { text: jobTitle });
     }, { once: true });
 });
 
-document.querySelectorAll('.section-policy').forEach(function (x) {
+document.querySelectorAll('#terms-and-conditions').forEach(function (x) {
     x.addEventListener('pointerleave', function (e) {
-        gtag('event', 'read_policy', {});
+        gtag('event', 'read_policy');
     }, { once: true });
 });
 
 
 document.addEventListener('keyup', function (e) {
     if (e.key === 'PrintScreen') {
-        alert('dude, you can just share the link, no need screenshot.');
+        alert('hi, you may just share the link, no screenshot is needed.');
     }
 });
 
