@@ -25,7 +25,10 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
-        if (location.host === '') throw new Error('localhost view, gtag config is skipped.');
+        if (location.host === '') {
+            window.gtag = function() { console.log(arguments); };
+            throw new Error('localhost view, gtag config is skipped.');
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-3PRB400W1H');
@@ -38,7 +41,9 @@
 
 <div id="body-content">
     <section class="header">
-        <img src="profile-pic.jpg" width="240px" height="240px" alt="profile picture..." class="profile_picture" title="hi">
+        <a href="mailto:mingliangc@google.com">
+            <img src="profile-pic.jpg" width="240px" height="240px" alt="profile picture..." class="profile_picture" title="hi">
+        </a>
         <menu>
             <div>
                 <h2>SKILLED TECH</h2>
@@ -76,21 +81,21 @@
         <div id="section-info">
             <h2 title="just some simple info">INFO</h2>
             <p>
-            <div>Name: ML Chua </div>
+            <div title="mingliangc">Name: CHUA MING LIANG</div>
             <p>Current Role: Front-end Developer</p>
             </p>
             <div>
                 <div>
                     Weakness:
                     <ul>
-                        <li>Can't write complicated spaghetti code</li>
+                        <li>Can't comprehend complicated topics</li>
                         <li>Can't multi-tasking</li>
                     </ul>
                 </div>
                 <div>
                     Strength:
                     <ul>
-                        <li>Don't write complicated spaghetti code</li>
+                        <li>Don't make topics complicated</li>
                         <li>Don't multi-tasking; focus on one task well</li>
                     </ul>
                 </div>
@@ -98,10 +103,11 @@
         </div>
         <div id="section-summary">
             <h2 title="story time">SUMMARY</h2>
-            <p>Currently working as a front-end developer who assist clients and their customers to quickly resolve 
-                technical issues on web technologies while providing smooth customer experience.
+            <p>Experience in troubleshooting technical issues across different levels cases including Gold programs
+                which required to assist clients and their customers to quickly resolve issues on web technologies 
+                while providing smooth customer experience.
             </p>
-            <p>Studied in information technology with specailism in system security. Once a full-stack developer, experience in gathering
+            <p>Studied in information technology with specailism in system security; Early career begin as a full-stack developer, experience in gathering
                 user requirements, analyzing & designing, testing, deploying, and software maintenance; as well as handle bug fixes,
                 change requests, bug reports, and entertain clients.</p>
         </div>
@@ -233,7 +239,7 @@
     <section class="section-policy">
         <div id="privacy-policy">
             Privacy Policy:<br />
-            by opening or accessing this document, you agree to give up all your data and allow others to
+            by opening or accessing this document, you agree to allow others to
             collect information and data about you and your device, which your data may share to other person, entities or
             organisations to process, store, and analyse for any purposes.
         </div>
@@ -245,9 +251,6 @@
             mentioned in this document, and also accept cookies that collect your data for analytics purpose.
             And you also agree to not to abuse any information in this document; That is, you agree to not spam or use
             info above for any unethical purposes.
-            For example, you should not spam the email or phone number, or use it for robot calls, or try hacking,
-            or use it to social engineer your way about anyone or any organisations mentioned or shown in this document.
-            Unless, you want to get into trouble and face consequences of your malicious action.
         </div>
     </section>
 </div>
