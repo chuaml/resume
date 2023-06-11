@@ -1,14 +1,36 @@
-var trackPageViewAfterSec = function (pageOpened_Sec) {
-    setTimeout(function () {
-        requestAnimationFrame(_ => { // record only if page is being view
-            gtag('event', 'page_view_sec', { value: pageOpened_Sec, text: pageOpened_Sec });
-        });
-    }, pageOpened_Sec * 1000);
-}
-trackPageViewAfterSec(15);
-trackPageViewAfterSec(30);
-trackPageViewAfterSec(60);
-trackPageViewAfterSec(120);
+// collect page view time
+requestAnimationFrame(timeSpan_ms => timeSpan_ms); // init first rAF, to be used as timespan
+window.addEventListener('beforeunload', function (ev) {
+    requestAnimationFrame(timeSpan_ms => { // record only if page is being view
+        const total_view_sec = timeSpan_ms / 1000;
+        gtag('event', 'page_view_sec', { event_type: ev.type, timeSpan_sec: total_view_sec, value: total_view_sec });
+    });
+});
+
+document.addEventListener('readystatechange', function (ev) {
+    if (ev.target.readyState !== 'interactive') return;
+    requestAnimationFrame(timeSpan_ms => { // record only if page is being view
+        const total_view_sec = timeSpan_ms / 1000;
+        gtag('event', 'readystatechange', { event_type: ev.type, text: 'interactive', timeSpan_sec: total_view_sec, value: 0 - total_view_sec });
+    });
+});
+
+window.addEventListener('DOMContentLoaded', function (ev) {
+    requestAnimationFrame(timeSpan_ms => { // record only if page is being view
+        const total_view_sec = timeSpan_ms / 1000;
+        gtag('event', 'DOMContentLoaded', { event_type: ev.type, timeSpan_sec: total_view_sec, value: 0 - total_view_sec });
+    });
+});
+
+window.addEventListener('load', function (ev) {
+    requestAnimationFrame(timeSpan_ms => { // record only if page is being view
+        const total_view_sec = timeSpan_ms / 1000;
+        gtag('event', 'window_load', { event_type: ev.type, timeSpan_sec: total_view_sec, value: 0 - total_view_sec });
+    });
+});
+
+
+
 
 document.querySelectorAll('a[href^=mailto]').forEach(function (x) {
     const handler = function (e) {
@@ -82,24 +104,24 @@ if (location.host !== '') {
         return false;
     });
 
-    (function () {
-        const cookieName = 'viewExpireTime';
-        const viewExpireTime = document.cookie.split('; ').find(x => x.startsWith(cookieName));
-        if (viewExpireTime === undefined) {
-            // set view expire after n day
-            document.cookie = cookieName + '='
-                + new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30)).toISOString()
-                + ';max-age=' + 60 * 60 * 24 * 365 / 4 // stay p time valid for blocking expired view
-                ;
-        } else {
-            const expireDate = viewExpireTime.substring(viewExpireTime.indexOf('=') + 1);
-            if (new Date() >= new Date(expireDate)) {
-                window.stop();
-                window.document.body.remove();
-                alert('your view session is expired.');
-                throw new Error('your view session has expired.');
-            }
-        }
-    })();
+    // (function () {
+    //     const cookieName = 'viewExpireTime';
+    //     const viewExpireTime = document.cookie.split('; ').find(x => x.startsWith(cookieName));
+    //     if (viewExpireTime === undefined) {
+    //         // set view expire after n day
+    //         document.cookie = cookieName + '='
+    //             + new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30)).toISOString()
+    //             + ';max-age=' + 60 * 60 * 24 * 365 / 4 // stay p time valid for blocking expired view
+    //             ;
+    //     } else {
+    //         const expireDate = viewExpireTime.substring(viewExpireTime.indexOf('=') + 1);
+    //         if (new Date() >= new Date(expireDate)) {
+    //             window.stop();
+    //             window.document.body.remove();
+    //             alert('your view session is expired.');
+    //             throw new Error('your view session has expired.');
+    //         }
+    //     }
+    // })();
 
 }
