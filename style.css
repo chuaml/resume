@@ -1,7 +1,9 @@
 :root {
     font-size: 16px;
     --primary-color: hsl(359, 100%, 28%);
-    --sec-color: rgb(42, 42, 42);
+    /* --sec-color: rgb(42, 42, 42); */
+    --sec-color: rgb(24, 24, 24);
+
     font-family: sans-serif;
     scroll-padding-top: 24px;
 }
@@ -10,13 +12,13 @@
 
 body {
     margin: 0;
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(24, 24, 24);
 }
 
 #body-content {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    /* background-color: rgb(32, 32, 32); */
+    /* background-color: rgb(24, 24, 24); */
     padding: .1in .5in;
     cursor: default;
     max-width: 1520px;
