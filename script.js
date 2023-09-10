@@ -76,6 +76,88 @@ document.addEventListener('keyup', function (e) {
     }
 });
 
+
+class ViewSession {
+    get expireDate() {
+        return new Date(this._getViewExpireTime());
+    }
+    get reactiveDate() {
+        return new Date(this._getViewExpireTime() + this.reactiveInTime_ms);
+    }
+
+    expireInTime_ms = 2_592_000_000; // 30 days
+    get reactiveInTime_ms() { return parseInt(localStorage['reactiveInTime_ms']); }
+    set reactiveInTime_ms(time_ms) { localStorage['reactiveInTime_ms'] = time_ms; }
+    constructor() {
+        localStorage['reactiveInTime_ms'] = localStorage['reactiveInTime_ms'] || 10_368_000_000; // 120 days
+        try {
+            this.validate();
+        } catch (err) {
+            this.resetAll();
+            throw err;
+        }
+    }
+
+    validate() {
+        if (this._getViewExpireTime() === -1) {
+            this.initOrRenew(this.expireInTime_ms);
+        }
+
+        if (this.expireDate.toString() === 'Invalid Date') {
+            console.error('invalid expireDate Time');
+            this.stopAndInvalidate();
+        }
+
+        const timeNow = new Date().getTime();
+        const viewExpireTime = this._getViewExpireTime();
+
+        const reactiveDateTime = this.reactiveDate.getTime();
+        if (timeNow > reactiveDateTime) { // renew view session after the expired n day + x days
+            this.resetAll();
+            this.initOrRenew(this.expireInTime_ms);
+        }
+        else if (timeNow > viewExpireTime) { // invalidate view session after n days
+            this.stopAndInvalidate();
+        }
+    }
+
+    _getViewExpireTime() {
+        const viewExpireTime = parseInt(localStorage['viewExpireTime']);
+        if (isNaN(viewExpireTime) === true) {
+            return -1;
+        }
+        else {
+            return viewExpireTime;
+        }
+    }
+
+    initOrRenew(expireInTime_ms) {
+        localStorage['viewExpireTime'] = new Date().getTime() + expireInTime_ms || -1;
+    }
+
+    stopAndInvalidate() {
+        window.stop();
+        window.document.body.remove();
+        setTimeout(() => {
+            alert('your view session is expired. please retry next time.');
+        }, 0);
+        console.error('your view session has expired.');
+    }
+
+    resetAll() {
+        localStorage.removeItem('viewExpireTime');
+        localStorage.removeItem('reactiveInTime_ms');
+    }
+
+    test(expireIn_sec = 5, renewIn_sec = 10) {
+        this.resetAll();
+        this.expireInTime_ms = expireIn_sec * 1000;
+        this.reactiveInTime_ms = renewIn_sec * 1000;
+        this.validate();
+    }
+}
+
+
 if (location.host !== '') {
     document.addEventListener('keydown', function (e) {
         const key = e.key.toUpperCase();
@@ -104,24 +186,14 @@ if (location.host !== '') {
         return false;
     });
 
-    // (function () {
-    //     const cookieName = 'viewExpireTime';
-    //     const viewExpireTime = document.cookie.split('; ').find(x => x.startsWith(cookieName));
-    //     if (viewExpireTime === undefined) {
-    //         // set view expire after n day
-    //         document.cookie = cookieName + '='
-    //             + new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30)).toISOString()
-    //             + ';max-age=' + 60 * 60 * 24 * 365 / 4 // stay p time valid for blocking expired view
-    //             ;
-    //     } else {
-    //         const expireDate = viewExpireTime.substring(viewExpireTime.indexOf('=') + 1);
-    //         if (new Date() >= new Date(expireDate)) {
-    //             window.stop();
-    //             window.document.body.remove();
-    //             alert('your view session is expired.');
-    //             throw new Error('your view session has expired.');
-    //         }
-    //     }
-    // })();
+    window.viewSession = new ViewSession();
+}
+else {
+    window.viewSession = new ViewSession();
 
+    // test viewSession
+    // window.viewSession.resetAll();
+    // window.viewSession.expireInTime_ms = 1000 * 5;
+    // window.viewSession.reactiveInTime_ms = 1000 * 10;
+    // window.viewSession.validate();
 }
