@@ -147,6 +147,12 @@ class ViewSession {
     resetAll() {
         localStorage.removeItem('viewExpireTime');
         localStorage.removeItem('reactiveInTime_ms');
+
+        // remove user info
+        for (const [k, v] of Object.entries(localStorage)) {
+            if (k.startsWith('user'))
+                localStorage.removeItem(k);
+        }
     }
 
     test(expireIn_sec = 5, renewIn_sec = 10) {

@@ -9,8 +9,8 @@
     <script>
         if (location.host !== '') {
             if (localStorage['agree_policy'] !== 'yes'
-                && window.confirm('This document uses cookies and record data, please agree to continue =) .'
-                    + 'refer terms and conditions in the document.') === false) {
+                && window.confirm('This document uses cookies and record data for smooth communication purposes, please agree to continue =) .'
+                    + 'refer terms and conditions in this document.') === false) {
                 window.stop();
             } else {
                 localStorage['agree_policy'] = 'yes';
@@ -27,8 +27,28 @@
         function gtag() { dataLayer.push(arguments); }
         if (location.host === '') {
             window.gtag = function() { console.log(arguments); };
-            throw new Error('localhost view, gtag config is skipped.');
+            console.error('localhost view, gtag is disabled and changed to debug info only.');
         }
+        const searchParams = new URLSearchParams(location.search);
+        if(!localStorage['user.fromCompany']) { // only set user info only 1st time visit, to prevent manual overwrite
+            const text = searchParams.get('utm_source')?.trim();
+            if(text) localStorage['user.fromCompany'] = text;
+        }
+        if(!localStorage['user.jobOffer']) { // only set user info only 1st time visit
+            const text = searchParams.get('utm_campaign')?.trim();
+            if(text) localStorage['user.jobOffer'] = text;
+        }
+        if(!localStorage['user.fromMedium']) { // only set user info only 1st time visit
+            const text = searchParams.get('utm_medium')?.trim();
+            if(text) localStorage['user.fromMedium'] = text;
+        }
+        
+        gtag('set', 'user_properties', {
+            fromCompany: localStorage['user.fromCompany'] || undefined,
+            jobOffer: localStorage['user.jobOffer'] || undefined,
+            fromMedium: localStorage['user.fromMedium'] || undefined,
+        });
+
         gtag('js', new Date());
 
         gtag('config', 'G-3PRB400W1H');
