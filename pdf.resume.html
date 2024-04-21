@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        window.addEventListener('load', function () {
+
+            // --set Job Post Info here--
+            const from_company = prompt('company name?', '')?.trim(); // company name
+            const about_job = prompt('about job?', '')?.trim(); // job
+            const medium = prompt('from what medium?', 'linkedin-pdf-resume')?.trim();
+            // --end of settings--
+
+
+
+            const summary = `CV url querystring info will be based on detail: \n\nfrom_company:  ${from_company}\nabout_job:  ${about_job}\nmedium:  ${medium}`;
+            if (!from_company || !about_job || !medium) {
+                alert('--Please fill all necessary detail-- \n\n' + summary);
+                throw new Error('--Please fill all necessary detail-- \n\n' + summary);
+            }
+
+            alert(summary);
+            const cvlink = `https://chuaml.github.io/resume?utm_source=${from_company}&utm_medium=${medium}&utm_campaign=${about_job}`
+            const a = document.getElementById('cvlink');
+            a.href = cvlink;
+            document.title += ' - ' + from_company;
+            console.log({ cvlink });
+
+            requestAnimationFrame(_ => {
+                setTimeout(_ => {
+                    a.innerText = 'loading...  ';
+                    requestAnimationFrame(_ => {
+                        setTimeout(_ => {
+                            a.innerText = 'please click here to reload';
+                            setTimeout(_ => {
+                                print();
+                            }, 350);
+                        }, 1500);
+                    });
+                }, 350);
+            });
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0 chuaml resume</title>
+    <style>
+        body {
+            font-size: 16px;
+            line-height: 1.5;
+            font-family: monospace;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        a:visited {
+            color: rgb(0, 0, 238);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Error: PDF is not supported, please
+        <a id="cvlink"
+            href="https://chuaml.github.io/resume?utm_source=linkedin&utm_medium=linkedin-pdf-resume&utm_campaign=xxxx-job">
+            {{ hyper link to web CV ... }}</a>.
+    </p>
+    <script>
+        console.log('this document is to generate a hyperlink to the web CV, with job post info.');
+    </script>
+
+</body>
+
+</html>
