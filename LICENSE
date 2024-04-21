@@ -1,13 +1,18 @@
-MIT License
+License
 
-Copyright (c) 2022 chuaml
+Copyright (c) 2024 chuaml
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
+Permission is hereby NOT granted to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
+
+The software and all the code in it or in this repository is for author own
+private use only. Any other person must NOT copy or modify it, and must NOT
+take advantages of this software and its code by commercializing it without
+the author's explicit consent.
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
