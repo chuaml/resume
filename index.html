@@ -19,30 +19,58 @@
     </script>
 
     <title>ML</title>
+
     <link rel="stylesheet" href="style.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PRB400W1H"></script>
+    <script src="main.init.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 100,
+        });
+        window.gtag = function() { console.log(arguments); };
+
         if (location.host === '') {
+            gtag('consent', 'update', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied'
+            });
             window.gtag = function() { console.log(arguments); };
             console.error('localhost view, gtag is disabled and changed to debug info only.');
         }
-        const searchParams = new URLSearchParams(location.search);
-        if(!localStorage['user.fromCompany']) { // only set user info only 1st time visit, to prevent manual overwrite
-            const text = searchParams.get('utm_source')?.trim();
-            if(text) localStorage['user.fromCompany'] = text;
+        else {
+            (async _ => {
+                if ((await window.viewSession?.isDebugMode()) === true) {
+                    gtag('consent', 'update', {
+                        'ad_storage': 'denied',
+                        'ad_user_data': 'denied',
+                        'ad_personalization': 'denied',
+                        'analytics_storage': 'denied'
+                    });
+                    window.gtag = function() { console.log(arguments); };
+                    console.error('now is debugMode view, gtag is disabled and changed to debug info only.');
+                }
+                else {
+                    window.gtag = function() { dataLayer.push(arguments); };
+                    gtag('consent', 'update', {
+                        'ad_storage': 'granted',
+                        'ad_user_data': 'granted',
+                        'ad_personalization': 'granted',
+                        'analytics_storage': 'granted'
+                    });
+                }
+            })();
         }
-        if(!localStorage['user.jobOffer']) { // only set user info only 1st time visit
-            const text = searchParams.get('utm_campaign')?.trim();
-            if(text) localStorage['user.jobOffer'] = text;
-        }
-        if(!localStorage['user.fromMedium']) { // only set user info only 1st time visit
-            const text = searchParams.get('utm_medium')?.trim();
-            if(text) localStorage['user.fromMedium'] = text;
-        }
-        
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PRB400W1H"></script>
+    <script>
         gtag('set', 'user_properties', {
             fromCompany: localStorage['user.fromCompany'] || undefined,
             jobOffer: localStorage['user.jobOffer'] || undefined,
@@ -57,10 +85,10 @@
 </head>
 
 <body>
-<noscript style="background-color:#FFFFFF;width:100vw;height:100vh;z-index:9999;display:block;position:fixed;">error, web browser does not support JavaScript.</noscript>
-
-<div id="body-content">
-    <section class="header">
+    <noscript style="background-color:#FFFFFF;width:100vw;height:100vh;z-index:9999;display:block;position:fixed;">error, web browser does not support JavaScript.</noscript>
+    
+    <div id="body-content">
+        <section class="header">
         <a href="mailto:chuaml@outlook.com">
             <img src="profile-pic.jpg" width="240px" height="240px" alt="profile picture..." class="profile_picture" title="hi">
         </a>
