@@ -9,7 +9,7 @@
     <script>
         if (location.host !== '') {
             if (localStorage['agree_policy'] !== 'yes'
-                && window.confirm('This document uses cookies and record data for smooth communication purposes, please agree to continue =) .'
+                && window.confirm('This document uses cookies and record data for smooth communication purposes, please agree to continue =) \n'
                     + 'refer terms and conditions in this document.') === false) {
                 window.stop();
             } else {
@@ -42,7 +42,7 @@
                 'analytics_storage': 'denied'
             });
             window.gtag = function() { console.log(arguments); };
-            console.error('localhost view, gtag is disabled and changed to debug info only.');
+            console.warn('localhost view, gtag is disabled and changed to debug info only.');
         }
         else {
             (async _ => {
@@ -54,7 +54,7 @@
                         'analytics_storage': 'denied'
                     });
                     window.gtag = function() { console.log(arguments); };
-                    console.error('now is debugMode view, gtag is disabled and changed to debug info only.');
+                    console.warn('now is debugMode view, gtag is disabled and changed to debug info only (in current browser Tab session).');
                 }
                 else {
                     window.gtag = function() { dataLayer.push(arguments); };
