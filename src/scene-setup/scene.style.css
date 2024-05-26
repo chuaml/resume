@@ -1,8 +1,13 @@
-body {
-    /* background-color: #333; */
-    /* overflow: hidden; */
-    /* height: 100vh; */
-    /* width: 100vw; */
+/* body {
+    background-color: #333;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+} */
+
+#app{
+    width: 100vw;
+    height: 100vh;
 }
 
 #loading-overlay {
@@ -12,7 +17,9 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: -1;
 }
 
