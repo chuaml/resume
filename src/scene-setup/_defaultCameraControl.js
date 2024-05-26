@@ -19,11 +19,6 @@ export function control_as_FPS(
         if (e.code === 'Escape')
             this.close();
     });
-    try {
-        // settingsModal.showModal();
-    } catch (err) {
-        console.error(err);
-    }
 
     const divResume = document.getElementById('body-content');
     camControl.addEventListener('lock', e => {
@@ -154,6 +149,18 @@ export function control_as_Orbit(
 ) {
     camera.position.setZ(25);
     camera.position.setY(6);
+
+    // click to show/hide resume
+    document.body.addEventListener('click', e => {
+        if (e.target.matches('section, section > *, canvas') === false) return;
+        const divResume = document.getElementById('body-content');
+        if (divResume.classList.contains('show')) {
+            divResume.classList.remove('show');
+        }
+        else {
+            divResume.classList.add('show');
+        }
+    });
 
     // movement
     document.body.addEventListener('keydown', function (e) {
