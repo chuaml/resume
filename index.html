@@ -20,8 +20,8 @@
 
     <title>ML</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="main.init.js"></script>
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.init.js" ></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -81,8 +81,8 @@
 
         gtag('config', 'G-3PRB400W1H');
     </script>
-    <script src="main.enhance-dom.js" defer></script>
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <script type="module" src="/src/main.enhance-dom.js" defer></script>
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
 </head>
 
 <body>
@@ -371,11 +371,40 @@
             info above for any unethical purposes.
         </div>
     </section>
+    </div>
 
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-</div>
 
+    <div id="app">
+        <link rel="stylesheet" href="/src/scene-setup/scene.style.css">
+        <dialog id="settingsModal" >
+            <div id="settings-container">
+              <form method="dialog">
+                <div>
+                  <kbd>W</kbd>
+                  <kbd>A</kbd>
+                  <kbd>S</kbd>
+                  <kbd>D</kbd>
+                  <p>Move forward, left, backward, right respectively</p>
+                </div>
+                <hr>
+                <div class="setting">
+                  <label for="setting-mouse-sensitivity">Mouse Sensitivity</label>
+                  <input id="setting-mouse-sensitivity" type="range" min=".1" max="5" step=".1" value="1" />
+                  <span class="value">1.0</span>
+                </div>
+                <div>
+                  <button id="btnClose" autofocus>Close</button>
+                </div>
+              </form>
+            </div>
+          </dialog>
+      
+          <div id="loading-overlay">
+            <div>loading...</div>
+          </div>
+        <canvas id="screenThreeD"></canvas>
+    </div>
+    <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>

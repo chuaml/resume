@@ -19,5 +19,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "public/main.init.js", "public/main.enhance-dom.js"]
+  "include": ["src"]
 }

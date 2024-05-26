@@ -166,6 +166,3 @@ else {
     // window.viewSession.reactiveInTime_ms = 1000 * 10;
     // window.viewSession.validate();
 }
-
-
-
