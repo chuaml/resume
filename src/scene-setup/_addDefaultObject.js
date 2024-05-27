@@ -58,16 +58,20 @@ export default function (
     const starGeo = new THREE.BoxGeometry(0.2, 0.2, 0.2);
     const starMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
     const starCount = 500;
-    const starDistance = 250;
+    const starStd_distance = 50;
     for (let i = 0; i < starCount; ++i) {
         const star = new THREE.Mesh(
             starGeo,
             starMat,
         );
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.random() * Math.PI;
+        const minmumDistance = Math.random() * starStd_distance + 150;
+
         star.position.set(
-            (Math.random() - .5) * starDistance,
-            (Math.random() - .5) * starDistance,
-            (Math.random() - .5) * starDistance
+            (Math.sin(theta) * Math.cos(phi) * minmumDistance),
+            (Math.sin(theta) * Math.sin(phi) * minmumDistance),
+            (Math.cos(theta) * minmumDistance)
         );
         star.rotateY(Math.random());
         star.rotateX(Math.random());
@@ -98,7 +102,7 @@ export default function (
         resume.rotation.y += 0.02 * speed_multiplier;
         resume.translateY((Math.sin(++x / 16) * .05) * speed_multiplier);
 
-        moonOrbit.rotation.x += 0.0005 * speed_multiplier;
+        moonOrbit.rotation.x -= 0.0005 * speed_multiplier;
         moonOrbit.rotation.z += 0.01 * speed_multiplier;
 
         sunOrbit.rotation.y -= 0.01 * speed_multiplier;

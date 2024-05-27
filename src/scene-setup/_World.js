@@ -20,7 +20,7 @@ export class World {
     this.renderer = renderer;
 
     const camera = new THREE.PerspectiveCamera(90, windowWidth / windowHeight, 0.1, 1000);
-    scene.add(new THREE.GridHelper(200, 50)); // floor debug
+    scene.add(new THREE.GridHelper(250, 20)); // floor debug
     this.camera = camera;
     this.scene = scene;
 
