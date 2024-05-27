@@ -1,0 +1,57 @@
+/* body {
+    background-color: #333;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+} */
+
+#app{
+    width: 100vw;
+    height: 100vh;
+}
+
+#loading-overlay {
+    color: #ddd;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#settingsModal {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: hsla(0deg 0 0 / .5);
+    overflow: hidden;
+}
+
+#settings-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#settings-container>form {
+    background-color: hsla(0deg 0% 25% / 1);
+    padding: 1em;
+    color: #eee;
+    box-shadow: 0 0 16px 1px #222;
+}
+
+#settings-container>form input,
+#settings-container>form button{
+    cursor: pointer;
+}
+
+.setting {
+    color: #eee;
+    padding: 1em;
+}
