@@ -9,9 +9,9 @@
     <script>
         if (location.host !== '') {
             if (localStorage['agree_policy'] !== 'yes'
-                && window.confirm('This document uses cookies and record data for smooth communication purposes, please agree to continue =) \n'
+                && window.alert('This document uses cookies and may collect some data for communication purposes; by clicking "OK" or accessing this page, you agree the terms and conditions stated in this document (under resume).\n'
                     + 'refer terms and conditions in this document.') === false) {
-                window.stop();
+                // window.stop();
             } else {
                 localStorage['agree_policy'] = 'yes';
             }
