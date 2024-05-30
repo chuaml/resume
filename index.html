@@ -33,7 +33,6 @@
             'analytics_storage': 'denied',
             'wait_for_update': 100,
         });
-        window.gtag = function () { console.log(arguments); };
 
         if (location.host.startsWith('localhost') || location.host === '') {
             gtag('consent', 'update', {
