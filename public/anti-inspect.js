@@ -1,0 +1,1 @@
+if (location.host.startsWith('localhost') === false && location.host !== '') { const f = _ => { debugger; setTimeout(f, 1500); }; f(); }
