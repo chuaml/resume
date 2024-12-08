@@ -91,6 +91,7 @@
         style="background-color:#FFFFFF;width:100vw;height:100vh;z-index:9999;display:block;position:fixed;">error, web
         browser does not support JavaScript.</noscript>
 
+<div id="overlay-popup" style="display: none;">
     <div id="body-content">
         <section class="header">
             <a href="mailto:chuaml@outlook.com">
@@ -391,6 +392,16 @@
         </section>
     </div>
 
+    <div id="body-sudoku" class="hidden">
+        <style>
+            iframe#sudoku {
+                width: 90vw;
+                height: 90vh;
+            }
+        </style>
+        <iframe id="sudoku" src="https://chuaml.github.io/sudoku" frameborder="0"></iframe>
+    </div>
+</div>
 
     <div id="app">
         <link rel="stylesheet" href="src/scene-setup/scene.style.css">

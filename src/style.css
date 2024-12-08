@@ -344,3 +344,15 @@ details[open]>summary {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
+
+#overlay-popup {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    width: 90vw;
+    height: 90vh;
+}
+
+#overlay-popup .hidden {
+    display: none;
+}
