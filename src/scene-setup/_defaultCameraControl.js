@@ -248,20 +248,56 @@ export function control_as_Orbit(
     camera.position.setZ(25);
     camera.position.setY(6);
 
+    function getClickedObject(mouse, scene, camera) {
+        const objects = [];
+        scene.traverse((child) => {
+            if (child.isMesh) objects.push(child);
+        });
+        const raycaster = new THREE.Raycaster();
+
+        // Raycast from the camera to the mouse position
+        raycaster.setFromCamera(mouse, camera);
+
+        // Get intersects with the scene objects
+        const intersects = raycaster.intersectObjects(objects);
+        console.log({intersects});
+        if (intersects.length > 0) {
+            return intersects[0].object; // The closest intersected object
+        }
+        return null;
+    }
+
+    const mouse = new THREE.Vector2();
+    function picker_showPopup() {
+        const nearestObject = getClickedObject(mouse, scene, camera);
+        console.log("nearest obj: ", nearestObject);
+        if(nearestObject === null) return;
+
+        document.querySelectorAll('#overlay-popup > *').forEach(x => {
+            x.classList.add('hidden');
+        });
+        const div = map_Name_Element(nearestObject.name);
+        div.classList.remove('hidden');
+        overlay.style.removeProperty('display');
+    }
 
     // click to show/hide resume
+    const overlay = document.querySelector('#overlay-popup');
     document.body.addEventListener('click', e => {
-        if (e.target.matches('section, section > *, canvas') === false) return;
-        const divResume = document.getElementById('body-content');
-        if (divResume.classList.contains('show')) {
-            divResume.classList.remove('show');
-        }
-        else {
-            divResume.classList.add('show');
+        console.log(overlay.style['display']);
+        if (overlay.style['display'] === 'none') {
+            document.querySelectorAll('#overlay-popup > *').forEach(x => {
+                x.classList.add('hidden');
+            });
+            mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+            picker_showPopup();
+        } else {
+            overlay.style['display'] = 'none';
         }
     });
 
-    // movement
+     // movement
     document.body.addEventListener('keydown', function (e) {
         if (e.code === 'KeyW') {
             camera.position.z -= 1;
