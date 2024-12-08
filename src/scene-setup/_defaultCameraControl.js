@@ -176,7 +176,7 @@ export function control_as_FPS(
             }
         }, { passive: true });
 
-        document.addEventListener('click', e => {
+        document.addEventListener('mouseup', e => {
             if (camControl.isLocked === false) return;
             if (e.isTrusted === false) return;
             picker_showPopup();
