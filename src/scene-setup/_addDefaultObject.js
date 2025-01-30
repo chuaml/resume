@@ -35,8 +35,27 @@ export default function (
     const geometry = new THREE.BoxGeometry(resumeSize * resumeRatio, resumeSize, .1);
     const resume = new THREE.Mesh(geometry, material);
     resume.translateY(1);
+    resume.name = 'resume';
     scene.add(resume);
 
+    const sudoku = (function(){ // sudoku
+        const texture = new THREE.TextureLoader().load('img/sudoku.webp');
+        // texture.offset = new THREE.Vector2(0, 0.4);
+        const material = new THREE.MeshStandardMaterial({
+            map: texture,
+            normalMap: texture,
+            metalness: 0.6,
+            roughness: .2,
+        });
+        const geometry = new THREE.BoxGeometry(10, 10, .1);
+        const sudoku = new THREE.Mesh(geometry, material);
+        sudoku.translateY(1);
+        sudoku.translateZ(-25);
+        sudoku.rotation.y = 1;
+        sudoku.name = 'sudoku';
+        scene.add(sudoku);
+        return sudoku;
+    })();
 
     const moon = new THREE.Mesh(
         new THREE.SphereGeometry(1),
@@ -101,6 +120,9 @@ export default function (
         // resume.rotation.z += 0.01 * r_mutiplier;
         resume.rotation.y += 0.02 * speed_multiplier;
         resume.translateY((Math.sin(++x / 16) * .05) * speed_multiplier);
+
+        sudoku.rotation.y -= 0.02 * speed_multiplier;
+        sudoku.translateY((Math.sin(++x / 16) * .05) * speed_multiplier);
 
         moonOrbit.rotation.x -= 0.0005 * speed_multiplier;
         moonOrbit.rotation.z += 0.01 * speed_multiplier;

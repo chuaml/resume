@@ -14,10 +14,10 @@ stateToUpdate = addDefaultObject(
 world.addSceneState(stateToUpdate);
 const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
 if (isMobileDevice) {
-    control_as_Orbit(world.camera, world.renderer.domElement);
+    control_as_Orbit(world.scene, world.camera, world.renderer.domElement);
 }
 else {
-    stateToUpdate = control_as_FPS(world.camera, world.renderer.domElement);
+    stateToUpdate = control_as_FPS(world.scene, world.camera, world.renderer.domElement);
     world.addSceneState(stateToUpdate);
 }
 
