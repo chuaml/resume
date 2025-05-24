@@ -9,12 +9,17 @@ I am deeply committed to the art of software crafting, emphasizing thoughtful de
 
 
 
-## Current Company and Job
+## Current Role
 
-I am a software developer, consultant, and supervisor in TDCX's Project 305. My team and I work [with one of the](https://www.google.com/?q=) biggest tech giants in the world and provide technical solutions to solve both theirs and their customers' problems.
+I am a software developer, technical solution specialist, consultant, and supervisor in TDCX's Project 305. My team and I work [with one of the biggest tech giants in the world](https://about.google/) and provide technical solutions to solve both theirs and their customers' problems.
+
+I am also know for:
+* Author of best practices guidelines, co-author of multiple Standard Operating Procedures (SOP), representative of Project 305, and support-pillar of the business operation.
+* Trainer of a team, with a record of onboarded more than 20+ new employees, upskilled 50+ specialists' technical skills and knowledge, cultivated and produced more than 8 talents to Senior level position in Front-end Developer role.
+* Experience in troubleshooting technical issues and assisting clients with their customers to resolve issues on web technologies quickly and accurately while providing smooth customer experience.
 
 
-## Achievements in TDCX's Project 305
+## Recent Achievements
 
 ### Level up the standard of team
 
@@ -46,10 +51,10 @@ Guidelines and documents
 New scopes and responsibilities
 * With the new and significantly improved quality of the team's skill, the company is able to expand the job scope, taking more tasks and responsibilities from clients with new SLAs.
 
+---
 
 
-
-## Working Experience
+## Experience
 
 **Subject Matter Expert** (*_current_)
 * with TDCX

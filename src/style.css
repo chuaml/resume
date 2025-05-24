@@ -2,13 +2,11 @@
     font-size: 16px;
     --primary-color: hsl(359, 100%, 28%);
     /* --sec-color: rgb(42, 42, 42); */
-    --sec-color: rgb(24, 24, 24);
+    --sec-color: #000;
 
     font-family: sans-serif;
     scroll-padding-top: 24px;
 }
-
-
 
 body {
     margin: 0;
@@ -58,10 +56,11 @@ body {
     display: none;
 }
 
-#body-sudoku{
+#body-sudoku {
     width: 100%;
     height: 100%;
-    &> iframe {
+
+    &>iframe {
         width: 100%;
         height: 100%;
     }
@@ -78,15 +77,16 @@ body {
         height: 100vh;
         position: absolute;
     }
+
     #body-content {
         padding: 0;
     }
 
-    a[href]:active{
+    a[href]:active {
         box-shadow: 0 0 16px 0px white;
     }
 
-    #body-sudoku{
+    #body-sudoku {
         width: 95%;
         height: 70%;
         margin: auto;
@@ -94,11 +94,17 @@ body {
         box-shadow: 0 0 16px 0px white;
         border: 1px solid #aaa;
     }
+
+    #body-content>section.main {
+        padding: 2em 1em; 
+    }
+
 }
 
 #body-content>section {
     padding: 2em 2em;
 }
+
 
 .header a {
     color: white;
@@ -127,14 +133,16 @@ details>summary {
 }
 
 details>summary {
-    border: 1px solid grey;
+    border: 1px solid #ccc;
     border-radius: .25em;
     box-shadow: 1px 1px 1px 0px;
 }
 
 details[open]>summary {
-    border-left: 2px solid grey;
-    box-shadow: inset -1px 1px 1px 0px;
+    border: 1px solid #bbb;
+    border-bottom: 0;
+    border-right: 0;
+    box-shadow: unset;
 }
 
 .header {
@@ -158,6 +166,7 @@ details[open]>summary {
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-evenly;
+        border-radius: 5rem 25rem 5rem; 
     }
 
     .header>menu {
@@ -174,8 +183,8 @@ details[open]>summary {
 }
 
 .profile_picture {
-    width: 15em;
-    height: 15em;
+    width: 10em;
+    height: 10em;
     background-color: hsl(202deg, 18%, 25%);
     border-radius: 50%;
     border: 2px solid lightgrey;
@@ -185,6 +194,14 @@ details[open]>summary {
     object-position: top;
     transition-delay: .2s;
     transition-duration: 1s;
+}
+
+@media only all and (orientation: portrait) {
+    .profile_picture {
+        width: 4em;
+        height: 4em;
+        display: none;
+    }
 }
 
 .profile_picture:hover {
@@ -231,12 +248,33 @@ details[open]>summary {
     line-height: 2em;
     text-shadow: 1px 1px 1px black;
 }
+#section-info{
+    grid-area: info;
+}
+#section-summary{
+    grid-area: summary;
+}
+#section-experience{
+    grid-area: experience;
+}
+#section-education{
+    grid-area: education;
+}
+
 
 .main {
     display: grid;
     padding-left: 1em;
     padding-right: 1em;
-    grid-template-columns: repeat(auto-fit, minmax(45ch, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(45ch, 1fr)); */
+    grid-template-areas:
+    "info summary" 
+    "experience summary" 
+    "experience education" 
+    ;
+
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-template-rows: 1fr 1fr; */
     background-color: white;
     color: var(--sec-color);
 }
@@ -244,6 +282,7 @@ details[open]>summary {
 @media only all and (orientation: portrait) {
     .main {
         display: block;
+        max-height: unset;
     }
 }
 
@@ -270,6 +309,11 @@ details[open]>summary {
     padding-left: 1em;
 }
 
+@media only all and (orientation: portrait) {
+    .job-position {
+        margin-left: 0;
+    }
+}
 
 .job-position>.job-title {
     margin-bottom: 0;
@@ -281,13 +325,15 @@ details[open]>summary {
     box-shadow: 1px 1px 1px 0px grey; */
 }
 
+
+
 .job-position>.job-title-current {
     color: black;
     text-shadow: -1px 2px 2px lightgrey;
 }
 
 #section-experience section {
-    max-height: 350px;
+    max-height: 36em;
     overflow-y: scroll;
 }
 
@@ -314,8 +360,9 @@ details[open]>summary {
 }
 
 .date-range {
-    font-size: smaller;
+    font-size: .6em;
     font-style: italic;
+    opacity: .5;
 }
 
 .cert-apu-degree,
@@ -364,7 +411,7 @@ details[open]>summary {
 /* custom scrollbar */
 /* for Chrome or similar only */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
