@@ -127,7 +127,7 @@ async function sha256(plainText) {
         .join('');
 }
 
-if (location.host.startsWith('localhost') === false && location.host !== '') {
+if (location.host !== '' && location.host.startsWith('localhost') === false && location.host.startsWith('127.0.0.1') === false) {
     document.addEventListener('keydown', function (e) {
         const key = e.key.toUpperCase();
         if (key === 'F12') {

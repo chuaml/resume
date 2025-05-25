@@ -1,1 +1,1 @@
-if (location.host.startsWith('localhost') === false && location.host !== '') { const f = _ => { debugger; setTimeout(f, 1500); }; f(); }
+if (location.host !== '' && location.host.startsWith('localhost') === false && location.host.startsWith('127.0.0.1') === false) { const f = _ => { debugger; setTimeout(f, 1500); }; f(); }

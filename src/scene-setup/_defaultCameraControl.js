@@ -3,9 +3,9 @@ import { PointerLockControls } from '/src/PointerLockControls_v2.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 function map_Name_Element(meshName) {
-    if(meshName === 'resume') {
+    if (meshName === 'resume') {
         return document.getElementById('body-content');
-    } else if(meshName === 'sudoku') {
+    } else if (meshName === 'sudoku') {
         return document.getElementById('body-sudoku');
     } else {
         return null;
@@ -39,7 +39,7 @@ export function control_as_FPS(
 
     let doShowMenu = true;
     camControl.addEventListener('unlock', e => {
-        if(doShowMenu) {
+        if (doShowMenu) {
             settingsModal.showModal();
         }
         else {
@@ -112,7 +112,7 @@ export function control_as_FPS(
             const cameraViewProjectionMatrix = new THREE.Matrix4();
             cameraViewProjectionMatrix.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
             frustum.setFromProjectionMatrix(cameraViewProjectionMatrix);
-    
+
             const len = objects.length;
             const maxDistance = 25;
             let previousObjectDistance = maxDistance;
@@ -123,11 +123,11 @@ export function control_as_FPS(
                 if (o.geometry) {
                     // Compute bounding box if not already computed
                     o.geometry.computeBoundingBox();
-    
+
                     // Transform the bounding box to world coordinates
                     const boundingBox = o.geometry.boundingBox.clone();
                     boundingBox.applyMatrix4(o.matrixWorld);
-    
+
                     // Check if the object intersects with the frustum
                     if (frustum.intersectsBox(boundingBox)) {
                         // Optionally, check distance
@@ -139,10 +139,10 @@ export function control_as_FPS(
                     }
                 }
             }
-    
+
             return nearestObject;
         }
-    
+
 
 
         function picker_showPopup() {
@@ -153,8 +153,8 @@ export function control_as_FPS(
             });
             const nearestObject = getNearestObjectInView(camera, objects);
             console.log("nearest obj: ", nearestObject);
-            if(nearestObject === null) return;
-    
+            if (nearestObject === null) return;
+
             document.querySelectorAll('#overlay-popup > *').forEach(x => {
                 x.classList.add('hidden');
             });
@@ -169,8 +169,8 @@ export function control_as_FPS(
             if (e.code === 'KeyE') {
                 picker_showPopup();
             }
-            else if(e.code === 'Escape') {
-                setTimeout(_=>{
+            else if (e.code === 'Escape') {
+                setTimeout(_ => {
                     camControl.lock();
                 }, 200);
             }
@@ -260,7 +260,7 @@ export function control_as_Orbit(
 
         // Get intersects with the scene objects
         const intersects = raycaster.intersectObjects(objects);
-        console.log({intersects});
+        console.log({ intersects });
         if (intersects.length > 0) {
             return intersects[0].object; // The closest intersected object
         }
@@ -271,7 +271,7 @@ export function control_as_Orbit(
     function picker_showPopup() {
         const nearestObject = getClickedObject(mouse, scene, camera);
         console.log("nearest obj: ", nearestObject);
-        if(nearestObject === null) return;
+        if (nearestObject === null) return;
 
         document.querySelectorAll('#overlay-popup > *').forEach(x => {
             x.classList.add('hidden');
@@ -284,6 +284,8 @@ export function control_as_Orbit(
     // click to show/hide resume
     const overlay = document.querySelector('#overlay-popup');
     document.body.addEventListener('click', e => {
+        if (e.isTrusted === false) return;
+        if (e.target.matches('a[href],details,summary')) return;
         console.log(overlay.style['display']);
         if (overlay.style['display'] === 'none') {
             document.querySelectorAll('#overlay-popup > *').forEach(x => {
@@ -297,7 +299,7 @@ export function control_as_Orbit(
         }
     });
 
-     // movement
+    // movement
     document.body.addEventListener('keydown', function (e) {
         if (e.code === 'KeyW') {
             camera.position.z -= 1;

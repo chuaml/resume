@@ -8,7 +8,7 @@
     <meta name="description" content="CV of ChuaML, software developer, software engineer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-        if (location.host !== '') {
+        if (location.host !== '' && location.host.startsWith('localhost') === false && location.host.startsWith('127.0.0.1') === false) {
             if (localStorage['agree_policy'] !== 'yes'
                 && window.alert('This document uses cookies and may collect some data for communication purposes; by clicking "OK" or accessing this page, you agree the terms and conditions stated in this document (under resume).\n'
                     + 'refer terms and conditions in this document.') === false) {
@@ -34,7 +34,7 @@
             'wait_for_update': 100,
         });
 
-        if (location.host.startsWith('localhost') || location.host === '') {
+        if (location.host.startsWith('127.0.0.1') || location.host.startsWith('localhost') || location.host === '') {
             gtag('consent', 'update', {
                 'ad_storage': 'denied',
                 'ad_user_data': 'denied',
@@ -85,11 +85,13 @@
     <link rel="icon" type="image/svg+xml" href="favicon.ico" />
     <script src="anti-inspect.js" async></script>
     <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "rhy151548c");
+        if (location.host !== '' && location.host.startsWith('localhost') === false && location.host.startsWith('127.0.0.1') === false) {
+            (function (c, l, a, r, i, t, y) {
+                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+            })(window, document, "clarity", "script", "rhy151548c");
+        }
     </script>
 </head>
 
@@ -98,48 +100,60 @@
         style="background-color:#FFFFFF;width:100vw;height:100vh;z-index:9999;display:block;position:fixed;">error, web
         browser does not support JavaScript.</noscript>
 
-    <div id="overlay-popup" style="">
-        <div id="body-content">
+    <div id="overlay-popup" style>
+        <div id="body-content" style="user-select: none;">
             <section class="header">
                 <a>
-                    <img src="img/profile-pic.webp" width="240px" height="240px" alt="profile picture..."
+                    <img src="img/profile-pic.webp" width="160px" height="160px" alt="profile picture..."
                         class="profile_picture" title="hi">
                 </a>
                 <menu>
+                    <div class="contact-info">
+                        <h2>CONTACT INFO</h2>
+                        <ul style="font-family: monospace;">
+                            <li><a target="_blank" mail> __________________ </a></li>
+                            <li><a target="_blank" wapp href="https://wa.me/6012345678"> _______________ __________ </a>
+                            </li>
+                            <li><a target="_blank" linkedin href="">LinkedIn
+                                    profile</a>
+                            </li>
+                        </ul>
+                        <script>
+                            addEventListener('load', function () {
+                                [
+                                    'mouseover',
+                                    'touchstart',
+                                ].forEach(ev =>
+                                    addEventListener(ev, function (e) { if (!e.isTrusted) return; setTimeout(e => { const x = atob('t92Yus2bvxGd19GQs1WY1h2Y'.split('').reverse().join('')); const a = document.body.querySelector('a[mail]'); a.innerText = x; a.setAttribute('href', atob('bWFpbHRvOg==') + x); }, 100, e); setTimeout(e => { const a = document.body.querySelector('a[wapp]'); a.innerText = atob('=kCcwF0c0FGaXhCIzEDNxACMycTLywGIPZzK'.split('').reverse().join('')); a.setAttribute('href', atob('==wMxQTMwIzNyEDM28SZt5SY39yL6MHc0RHa'.split('').reverse().join(''))); }, 150, e); setTimeout(e => { const x = atob('t92Yus2bvxGd19GQs1WY1h2Y'.split('').reverse().join('')); const a = document.body.querySelector('a[linkedin]'); a.setAttribute('href', atob('==wL2gTM0kTOxITYtMWLs12Lul2Lt92Yu4WakV2aulGbuc3d39yL6MHc0RHa'.split('').reverse().join(''))); }, 200, e); }, { once: true })
+                                )
+                            });
+                        </script>
+                    </div>
                     <div>
-                        <h2>SKILLED TECH</h2>
+                        <h2>CAREER</h2>
+                        <ul class="label-container">
+                            <li><a>Technical Consultant</a></li>
+                            <li><a>Programmer</a></li>
+                            <li><a>Specialist</a></li>
+                            <li><a>Software Developer</a></li>
+                            <li><a>Trainer</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>TECHNOLOGY</h2>
                         <ul class="label-container">
                             <li><a target="_blank" href="https://www.google.com/search?q=C%23">C#</a></li>
                             <li><a target="_blank" href="https://www.google.com/search?q=JavaScript">JavaScript</a></li>
                             <li><a target="_blank" href="https://www.google.com/search?q=Java">Java</a></li>
                             <li><a target="_blank" href="https://www.google.com/search?q=Php">Php</a></li>
                             <li><a target="_blank" href="https://www.google.com/search?q=SQL">SQL</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2>OTHERS</h2>
-                        <ul class="label-container">
+                            
                             <li><a target="_blank" href="https://www.google.com/search?q=.NET%20Core">.NET Core</a></li>
                             <li><a target="_blank" href="https://www.google.com/search?q=node.js">node.js</a></li>
                             <li><a target="_blank" href="https://www.google.com/search?q=jQuery">jQuery</a></li>
                             <li><a target="_blank" href="https://www.google.com/search?q=Robocorp">Robocorp</a></li>
-                            <li><a target="_blank" href="https://www.google.com/search?q=Design%20Pattern">Design
-                                    Pattern</a>
-                            </li>
+                            <li><a target="_blank" href="https://www.google.com/search?q=Design%20Pattern">Design Pattern</a></li>
                         </ul>
-                    </div>
-                    <div class="contact-info">
-                        <h2>CONTACT INFO</h2>
-                        <ul>
-                            <li><a target="_blank" mail>-</a></li>
-                            <li><a target="_blank" wapp href="https://wa.me/6012345678">-</a></li>
-                            <li><a target="_blank" linkedin href="">LinkedIn
-                                    profile</a>
-                            </li>
-                        </ul>
-                        <script>
-                            addEventListener('load', function () { setTimeout(_ => { addEventListener('mouseover', function (e) { if (!e.isTrusted) return; setTimeout(e => { const x = atob('t92Yus2bvxGd19GQs1WY1h2Y'.split('').reverse().join('')); const a = document.body.querySelector('a[mail]'); a.innerText = x; a.setAttribute('href', atob('bWFpbHRvOg==') + x); }, 100, e); setTimeout(e => { const a = document.body.querySelector('a[wapp]'); a.innerText = atob('=kCcwF0c0FGaXhCIzEDNxACMycTLywGIPZzK'.split('').reverse().join('')); a.setAttribute('href', atob('==wMxQTMwIzNyEDM28SZt5SY39yL6MHc0RHa'.split('').reverse().join(''))); }, 150, e); setTimeout(e => { const x = atob('t92Yus2bvxGd19GQs1WY1h2Y'.split('').reverse().join('')); const a = document.body.querySelector('a[linkedin]'); a.setAttribute('href', atob('==wL2gTM0kTOxITYtMWLs12Lul2Lt92Yu4WakV2aulGbuc3d39yL6MHc0RHa').split('').reverse().join('')); }, 200, e); }, { once: true }); }, 2000); });
-                        </script>
                     </div>
                 </menu>
             </section>
@@ -149,81 +163,43 @@
                     <h2 title="just some simple info">INFO</h2>
                     <p>
                     <div title="mingliangc">Name: CHUA MING LIANG</div>
-                    <p>Current Role: Subject Matter Expert</p>
+                    <p>Current role: Subject Matter Expert</p>
                     </p>
                     <div>
-                        <div>
-                            <span>Strength:</span>
-                            <ul>
-                                <li>Simplifying complicated topics</li>
-                                <li>Committing and focusing on an important task</li>
-                                <li>Sharing and caring for others</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <span>Weakness:</span>
-                            <ul>
-                                <li>Avoid overly unnecessary complicated topics</li>
-                                <li>Stubborn on trying to solve problems that no one had yet</li>
-                                <li>Spending too much time on helping people</li>
-                            </ul>
-                        </div>
+                        <span>Role description:</span>
+                        <p>
+                            Alphabet Inc.'s subsidiary certified subject expert on managing, maintaining, improving, and providing
+                            technical solution services with quality customer experience.
+                        </p>
                     </div>
                 </div>
                 <div id="section-summary">
                     <h2 title="story time">SUMMARY</h2>
-                    <p>Experience in troubleshooting technical issues across different level of cases including gold
-                        program
-                        which required to assist clients and their customers to resolve issues on web technologies
-                        quickly
-                        and accurately
-                        while providing smooth customer experience.
+                    <p>A highly accomplished and results-oriented Technical Solution Expert with years of
+                        experience in designing, implementing, and optimizing robust technical solutions across diverse industries.
                     </p>
-                    <p>Studied in information technology with specailism in system security; Early career begin as a
-                        full-stack developer, experience in gathering
-                        user requirements, analyzing & designing, testing, deploying, and software maintenance; as well
-                        as
-                        handle bug fixes,
-                        change requests, bug reports, and entertain clients.</p>
-                </div>
 
-                <div id="section-education">
-                    <h2 title="Professional studies">EDUCATION</h2>
-                    <article class="cert-apu-degree">
-                        <h3 title="BSc Degree in IT System Security">BSc (Hons) in Information Technology <br />with
-                            Specialism in Information System Security</h3>
-                        <div class="date-range">2018 - 2020</div>
-                        <div>
-                            <a target="_blank" title="APU aka APIIT"
-                                href="https://www.google.com/search?q=Asia+Pacific+University">Asia Pacific
-                                University</a>
-                        </div>
-                    </article>
-                    <article class="cert-su-degree">
-                        <h3>BSc (Hons) in Information Technology<br />UK Degree</h3>
-                        <div class="date-range">2018 - 2020</div>
-                        <div>
-                            <a target="_blank"
-                                href="https://www.google.com/search?q=Staffordshire+University">Staffordshire
-                                University</a>
-                        </div>
-                    </article>
-                    <article class="cert-apu-diploma">
-                        <h3>Diploma in Information and Communication Technologies</h3>
-                        <div class="date-range">2016 - 2018</div>
-                        <div>Asia Pacific Institute of Information Technology</div>
-                    </article>
-
+                    <p>
+                        Experience in troubleshooting technical issues and assisting clients with their customers to resolve issues on web technologies quickly and accurately while providing smooth customer experience.
+                    </p>
+                    <p>
+                        Author of best practices guidelines, co-author of multiple Standard Operating Procedures (SOP), representative of Project 305, and support-pillar of the business operation.
+                    </p>
+                    <p>
+                        Trainer of a team, with a record of onboarded more than 20+ new employees, upskilled 50+ specialists' technical skills and knowledge, cultivated and produced more than 8 talents to Senior level position in Front-end Developer role.
+                    </p>
+                        
+                        
                 </div>
 
                 <div id="section-experience">
                     <h2 title="elog ?">EXPERIENCE</h2>
                     <section>
                         <article>
-                            <h3 class="company-name" title="BPO provider that specialized digital customer experience">
-                                TDCX
+                            <h3 class="company-name" title="Yes GoogIe">
+                                GoogIe LLC
                             </h3>
-                            <div class="date-range">2022 ~ present</div>
+                            <div class="date-range">in 2022 ~ present</div>
                             <div class="job-position">
                                 <h4 class="job-title job-title-current">Subject Matter Expert</h4>
                                 <div class="date-range">Aug 2023 – Present</div>
@@ -233,7 +209,7 @@
                                     </summary>
                                     <p>
                                     <ul>
-                                        <li>Manage teams within TDCX's project 305</li>
+                                        <li>Manage technical solutions teams within South East Asia</li>
                                         <li>Monitor, maintain, and improve team performance</li>
                                         <li>Teach and assess new joiners on necessary skills set</li>
                                         <li>Train and upskill team members skills on related fields and products
@@ -247,7 +223,7 @@
                                 </details>
                             </div>
                             <div class="job-position">
-                                <h4 class="job-title">Front-end Developer (Premium Agent)</h4>
+                                <h4 class="job-title">Technical Solutions Specialist (Premium Agent)</h4>
                                 <div class="date-range">Jul 2023 – Sep 2023</div>
                                 <details open>
                                     <summary>
@@ -255,10 +231,10 @@
                                     </summary>
                                     <p>
                                     <ul>
-                                        <li>Provide the highest quality supports of TDCX's project 305 to Gold program
-                                            clients and their VIP customers/companies</li>
-                                        <li>Help team to meet SLA and maintain high availbility and uptime</li>
-                                        <li>Support various web technologies of the TDCX's project 305</li>
+                                        <li>Provide the highest quality supports to Gold program
+                                            clients and their VIP customers in South East Asia</li>
+                                        <li>Help team to meet target and maintain high availability and uptime</li>
+                                        <li>Support various web technologies of the technical solutions team</li>
                                         <li>Provide multinational tech support with smooth customer experience</li>
                                         <li>Maximize customer satisfaction</li>
                                     </ul>
@@ -266,7 +242,7 @@
                                 </details>
                             </div>
                             <div class="job-position">
-                                <h4 class="job-title">Front-end Developer</h4>
+                                <h4 class="job-title">Technical Solutions Specialist</h4>
                                 <div class="date-range">Feb 2022 – July 2023</div>
                                 <details>
                                     <summary>
@@ -274,9 +250,47 @@
                                     </summary>
                                     <p>
                                     <ul>
-                                        <li>Support various web technologies of the TDCX's project 305</li>
+                                        <li>Support various web technologies integration</li>
                                         <li>Provide multinational tech support with smooth customer experience</li>
+                                        <li>Identify technical issues and offer solutions</li>
                                         <li>Maximize customer satisfaction</li>
+                                    </ul>
+                                    </p>
+                                </details>
+                            </div>
+                        </article>
+                        <article>
+                            <h3 class="company-name" title="BPO provider that specialized digital customer experience">
+                                TDCX
+                            </h3>
+                            <div class="date-range">in 2022 ~ present</div>
+                            <div class="job-position">
+                                <h4 class="job-title job-title-current">Subject Matter Expert</h4>
+                                <div class="date-range">Aug 2023 – Present</div>
+                                <details open>
+                                    <summary>
+                                        Responsibilities:
+                                    </summary>
+                                    <p>
+                                    <ul>
+                                        <li>Manage teams within TDCX's project 305</li>
+                                        <li>Maintain good relationship of company and clients</li>
+                                    </ul>
+                                    </p>
+                                </details>
+                            </div>
+                            <div class="job-position">
+                                <h4 class="job-title">Front-end Developer</h4>
+                                <div class="date-range">Feb 2022 – Aug 2023</div>
+                                <details>
+                                    <summary>
+                                        Responsibilities:
+                                    </summary>
+                                    <p>
+                                    <ul>
+                                        <li>Support various web technologies of the TDCX's project 305</li>
+                                        <li>Assist clients to integrate software solutions</li>
+                                        <li>and trouble troubleshoot technical issues</li>
                                     </ul>
                                     </p>
                                 </details>
@@ -286,7 +300,7 @@
                             <h3 class="company-name" title="FusionQB formarly known as Nexplatform">Nexplatform ->
                                 FusionQB
                                 Sdn. Bhd.</h3>
-                            <div class="date-range">Nov 2020 ~ Jan 2022</div>
+                            <div class="date-range">in 2020 ~ 2022</div>
                             <div class="job-position">
                                 <h4 class="job-title">Technical Consultant</h4>
                                 <div class="date-range">Jan 2021 – Jan 2022</div>
@@ -329,7 +343,7 @@
                         <article>
                             <h3 class="company-name" title="Online retailer">Infinity Cardeco Entertainment Sdn. Bhd.
                             </h3>
-                            <div class="date-range">Jan 2018 – Dec 2019</div>
+                            <div class="date-range">in 2018 ~ 2019</div>
                             <div class="job-position">
                                 <h4 class="job-title">Full-stack Php Developer</h4>
                                 <div class="date-range">Jan 2019 – Dec 2019</div>
@@ -367,7 +381,7 @@
                         <article>
                             <h3 class="company-name" title="Parent company of WebNIC, a DNS and Web-service provider">
                                 Qinetics Solutions Sdh. Bhd.</h3>
-                            <div class="date-range">July 2019 – Nov 2019</div>
+                            <div class="date-range">in 2019 ~ 2019</div>
                             <div class="job-position">
                                 <h4 class="job-title">Software Support Engineer</h4>
                                 <div class="date-range">July 2019 – Nov 2019</div>
@@ -388,6 +402,35 @@
                         </article>
                     </section>
                 </div>
+
+                <div id="section-education">
+                    <h2 title="Professional studies">EDUCATION</h2>
+                    <article class="cert-apu-degree">
+                        <h3 title="BSc Degree in IT System Security">BSc (Hons) in Information Technology <br />with
+                            Specialism in Information System Security</h3>
+                        <div class="date-range">2018 - 2020</div>
+                        <div>
+                            <a target="_blank" title="APU aka APIIT"
+                                href="https://www.google.com/search?q=Asia+Pacific+University">Asia Pacific
+                                University</a>
+                        </div>
+                    </article>
+                    <article class="cert-su-degree">
+                        <h3>BSc (Hons) in Information Technology<br />UK Degree</h3>
+                        <div class="date-range">2018 - 2020</div>
+                        <div>
+                            <a target="_blank"
+                                href="https://www.google.com/search?q=Staffordshire+University">Staffordshire
+                                University</a>
+                        </div>
+                    </article>
+                    <article class="cert-apu-diploma">
+                        <h3>Diploma in Information and Communication Technologies</h3>
+                        <div class="date-range">2016 - 2018</div>
+                        <div>Asia Pacific Institute of Information Technology</div>
+                    </article>
+
+                </div>
             </section>
 
             <section class="section-policy">
@@ -395,8 +438,7 @@
                     Privacy Policy:<br />
                     by opening or accessing this document, you agree to allow others to
                     collect information and data about you and your device, which your data may share to other person,
-                    entities or
-                    organisations to process, store, and analyse for any purposes.
+                    entities or organizations to process, store, or analyze for any purposes.
                 </div>
             </section>
             <section class="section-policy">
@@ -406,9 +448,7 @@
                     policy
                     mentioned in this document, and also accept cookies that collect your data for analytics purpose.
                     And you also agree to not to abuse any information in this document; That is, you agree to not spam
-                    or
-                    use
-                    info above for any unethical purposes.
+                    or use info above for any unethical purposes.
                 </div>
             </section>
         </div>

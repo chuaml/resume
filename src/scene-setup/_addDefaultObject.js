@@ -30,7 +30,7 @@ export default function (
         // metalness: 0.6,
         roughness: 0.8,
     });
-    const resumeRatio = 1.69;
+    const resumeRatio = 1.59;
     const resumeSize = 10;
     const geometry = new THREE.BoxGeometry(resumeSize * resumeRatio, resumeSize, .1);
     const resume = new THREE.Mesh(geometry, material);
