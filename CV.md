@@ -1,7 +1,7 @@
 # ML C.
 
 * contact info: +6O 12 - 6l4 2569 (Whatsapp only)
-* checkout a 3D online resume here: https://chuaml.github.io/resume/
+* checkout a simple handcraft (non-vibe coding) 3D online resume here: https://chuaml.github.io/resume/
 
 ## Summary
 I am a business and software development professional with a proven track record in delivering successful projects and maintaining high quality services. Not just software development, I am also experienced in dealing with business processes and people to help on solving unique problems. My academic foundation includes two Bachelor's degrees in Information System Security and IT, providing a strong understanding of both development and security principles. 
@@ -32,7 +32,7 @@ Standard of team
 ### Improve Standard Operating Procedure
 
 Set a good example
-* New way of scoring employee's competency was introduced in 2023, by categorising tier into [ Gold, Silver, Bronze ] Highest to lowest quality demand respectively. My working style and performance have been elected by management to be the new good example on how to handle tasks effectively in the Gold and Silver level tier. As a result, new KPI metrics were introduced along new Standard Operating Procedures (SOP) to employees who are eligible for Gold and Silver tier.
+* A new way of scoring employee competency was introduced in 2023, by categorising tier into [ Gold, Silver, Bronze ] Highest to lowest quality demand respectively. My working style and performance have been elected by management to be the new good example on how to handle tasks effectively in the Gold and Silver level tier. As a result, new KPI metrics were introduced along new Standard Operating Procedures (SOP) to employees who are eligible for Gold and Silver tier.
 
 Co-author SOPs
 * Assisted clients to maintain and introduce new Standard Operating Procedures (SOP) and guidelines; I assisted clients to patch more than 15+ SOPs and I am author 1 new SOP.
@@ -42,7 +42,7 @@ Co-author SOPs
 
 Increased team's size
 * Help team to steadily increased team size from 15 core employees to ~50 employees over the years in 2022 to 2024
-* Assisted company to onboard 30+ new joiner and train more than 50 unique employees
+* Assisted company to onboard 30+ new joiners and train more than 50 unique employees
 
 Guidelines and documents
 * Written more than 10 quality documents with dozens of guidelines to prevent and solve the previously undocumented problems.
