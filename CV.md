@@ -13,9 +13,9 @@ I am deeply committed to the art of software crafting, emphasizing thoughtful de
 
 I am a software developer, technical solution specialist, consultant, and supervisor in TDCX's Project 305. My team and I work [with one of the biggest tech giants in the world](https://about.google/) and provide technical solutions to solve both theirs and their customers' problems.
 
-I am also know for:
+I am also known for:
 * Author of best practices guidelines, co-author of multiple Standard Operating Procedures (SOP), representative of Project 305, and support-pillar of the business operation.
-* Trainer of a team, with a record of onboarded more than 20+ new employees, upskilled 50+ specialists' technical skills and knowledge, cultivated and produced more than 8 talents to Senior level position in Front-end Developer role.
+* Trainer of a team, with a record of onboarded more than 30+ new employees, upskilled 50+ specialists' technical skills and knowledge, cultivated and produced more than 8 talents to Senior level position in Technical Specialist and Front-end Developer role.
 * Experience in troubleshooting technical issues and assisting clients with their customers to resolve issues on web technologies quickly and accurately while providing smooth customer experience.
 
 
@@ -35,14 +35,14 @@ Set a good example
 * New way of scoring employee's competency was introduced in 2023, by categorising tier into [ Gold, Silver, Bronze ] Highest to lowest quality demand respectively. My working style and performance have been elected by management to be the new good example on how to handle tasks effectively in the Gold and Silver level tier. As a result, new KPI metrics were introduced along new Standard Operating Procedures (SOP) to employees who are eligible for Gold and Silver tier.
 
 Co-author SOPs
-* Assisted client to maintain and introduce new Standard Operating Procedures (SOP) and guidelines; I assisted clients to patch more than 15+ SOPs and I am author 1 new SOP.
+* Assisted clients to maintain and introduce new Standard Operating Procedures (SOP) and guidelines; I assisted clients to patch more than 15+ SOPs and I am author 1 new SOP.
 
 
 ### Expansion of team
 
 Increased team's size
 * Help team to steadily increased team size from 15 core employees to ~50 employees over the years in 2022 to 2024
-* Assisted company to onboard 20+ new joiner and train more than 50 employees
+* Assisted company to onboard 30+ new joiner and train more than 50 unique employees
 
 Guidelines and documents
 * Written more than 10 quality documents with dozens of guidelines to prevent and solve the previously undocumented problems.
@@ -70,7 +70,7 @@ New scopes and responsibilities
 Senior Front-end Developer (_Nominated_)
 * with TDCX
 
-Front-end Developer - Premium Agent
+Technical Specialist - Premium Agent
 * with TDCX
 * Responsibilities:
     * Provide the highest quality supports of TDCX's project 305 to Gold program clients and their VIP customers/companies
@@ -85,6 +85,7 @@ Front-end Developer
     * Support various web technologies of the TDCX's project 305
     * Provide multinational tech support with smooth customer experience
     * Maximize customer satisfaction
+
 
 Technical Consultant
 * with FusionQB
