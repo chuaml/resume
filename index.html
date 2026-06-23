@@ -103,10 +103,10 @@
     <div id="overlay-popup" style>
         <div id="body-content" style="user-select: none;">
             <section class="header">
-                <a>
+                <!-- <a>
                     <img src="img/profile-pic.webp" width="160px" height="160px" alt="profile picture..."
                         class="profile_picture" title="hi" loading="lazy" decoding="async">
-                </a>
+                </a> -->
                 <menu>
                     <div class="contact-info">
                         <h2>CONTACT INFO</h2>
@@ -119,7 +119,8 @@
                             </li>
                         </ul>
                         <script>
-                            addEventListener('load', function () {
+                            addEventListener('load', function (event) {
+                                if(event.isTrusted === false) return;
                                 [
                                     'mouseover',
                                     'touchstart',
@@ -196,7 +197,7 @@
                     <h2 title="elog ?">EXPERIENCE</h2>
                     <section>
                         <article>
-                            <h3 class="company-name" title="Yes GoogIe">
+                            <h3 class="company-name" title="AI, AI, AI, Generative AI.">
                                 GoogIe LLC
                             </h3>
                             <div class="date-range">in 2022 ~ present</div>
@@ -209,15 +210,17 @@
                                     </summary>
                                     <p>
                                     <ul>
-                                        <li>Manage technical solutions teams within South East Asia</li>
-                                        <li>Monitor, maintain, and improve team performance</li>
-                                        <li>Teach and assess new joiners on necessary skills set</li>
-                                        <li>Train and upskill team members skills on related fields and products
-                                            knowledge
-                                        </li>
+                                        <li>Co-manage teams within Google Technical Solutions</li>
+                                        <li>Assess interviewee skillsets and potential</li>
+                                        <li>Assess employees performance and competency</li>
                                         <li>Review and enforce team rules, policies, guidelines and SOP</li>
+                                        <li>Monitor, maintain, and improve team performance</li>
+                                        <li>Onboard, teach and assess new joiners on necessary skills set</li>
+                                        <li>Train and upskill team members skills on related fields and products knowledge</li>
+                                        <li>Ensure employees has solid technical skills to provide smooth tech support and customer services</li>
                                         <li>Guide and help team members on difficulties</li>
                                         <li>Help team members on urgent requests and unforeseen issues</li>
+                                        <li>Review, revise, and integrate new project scope and technologies into existing workflow</li>
                                     </ul>
                                     </p>
                                 </details>
