@@ -1,4 +1,4 @@
-# CHUA MING LIANG
+# Mr. M.L. CHUA 
 
 contact info
 * E-mail: chuaml@outlook.com 
@@ -65,7 +65,7 @@ New scopes and responsibilities
 
 **Subject Matter Expert (Technical & Customer Service)** \**current*
 
-* with Google  
+* with Google (via TDCX)
 * Responsibilities:  
   * Co-manage teams within Google Technical Solutions  
   * Assess interviewee skillsets and potential   
